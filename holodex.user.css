@@ -21,7 +21,8 @@
 @var checkbox borderlessHolodex "Borderless Holodex" 1
 @var select changeAvatar "Change Avatar Image" {
  "None": "none",
- "Aqua Anchor*": "'data:image/webp;base64,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'",
+ "Anchor*": "'https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/main/avatar/anchor.webp'",
+ "Holodex": "'https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/main/avatar/holodex.webp'",
  "Custom": "avatarCustom"
 }
 @var text avatarCustom "Custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
@@ -60,6 +61,7 @@
 @var checkbox hateScrollbars "Hide scrollbars everywhere on the internet" 0
 
 ==/UserStyle== */
+
 @-moz-document url-prefix("https://holodex.net") {
 
 	.v-navigation-drawer--open {
@@ -178,21 +180,16 @@
 
 	if changeAvatar!="none" {
 
-		header .v-avatar {
-			height: 0 !important;
-			width: 0 !important;
-			padding-left: 40px !important;
-			padding-top: 40px !important;
-			background: url(changeAvatar) no-repeat center/cover !important;
-			border-radius: 50%;
-		}
-
+		header .v-avatar,
 		.v-menu__content .v-avatar {
 			height: 0 !important;
 			width: 0 !important;
 			padding-left: 40px !important;
 			padding-top: 40px !important;
-			background: url(changeAvatar) no-repeat center/cover !important;
+			background-image: url(changeAvatar) !important;
+			background-position: center !important;
+			border-radius: 50% !important;
+			background-size: cover !important;
 		}
 	}
 }
@@ -407,8 +404,8 @@
 		div.content > div > div > div > a > span:not(.text-moderator-light) {
 			color: rgb(59, 136, 213) !important;
 		}
-		
-    div.content > div > div > div > a > span.text-moderator-light {
+
+		div.content > div > div > div > a > span.text-moderator-light {
 			color: green !important;
 		}
 
