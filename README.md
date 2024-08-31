@@ -6,7 +6,7 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css)
 
 ## Preview
-![Main preview image](/previews/1.png)
+![Main preview image](/preview/1.png)
 
 ## Details
 ### Notice
