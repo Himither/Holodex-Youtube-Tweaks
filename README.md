@@ -13,7 +13,7 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 Rarely, **when Hyperchat has an update waiting for you to accept**, the styling will temporarily not affect it until you **confirm the update**.
 
 ### [Holodex](https://holodex.net/)
-**Turn on Holodex own dark mode** for the improved dark mode to display properly
+**Turn on Holodex own dark mode** for the the two extended dark modes to display properly.
 
 Unless you're using fullscreen mode anyway I would recommend Firefox over Chrome, because there's no ugly border on the top. Of course you need to install a nice pure black theme to make it fit.
 
