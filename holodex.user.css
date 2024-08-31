@@ -4,14 +4,14 @@
 @namespace      https://github.com/Himither
 @homepageURL		https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        1.1.4
+@version        1.1.5
 @updateURL	    https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         Himither
 @license        MIT
 @preprocessor   stylus
 
-@var text Holodex " " '---Holodex---'
+@var text Holodex "-------------------------------------------------------------------------------" '---Holodex---'
 @var select darkmode "Dark Mode"   {
   "Default": "normal",
   "Darker*": "darker",
@@ -19,6 +19,7 @@
 }
 @var number sidemenuWidth "Set navigation menu width (170px - 1080px)" [220, 170, 1080, 1, "px"]
 @var checkbox borderlessHolodex "Borderless Holodex" 1
+@var checkbox hoverOverlay "Show video overlay only on video hover" 0
 @var select changeAvatar "Change Avatar Image" {
  "None": "none",
  "Anchor*": "'https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/main/avatar/anchor.webp'",
@@ -27,33 +28,33 @@
 @var text avatarCustom "Custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
 @var range avatarSize "Adjust avatar size" [100, 50, 150, 1, "%"]
 
-@var text Singleview " " '---Singleview---'
+@var text Singleview "-------------------------------------------------------------------------------" '---Singleview---'
 @var number sidebarWidth  "Adjust the chat/TLdex width (170px - 1080px)" [340, 170, 1080, 1, "px"]
 @var checkbox videoMaxHeight "Increase video height to 100% (Best with Holodex Theatre Mode)" 0
 
-@var text Multidex " " '---Multidex---'
+@var text Multidex "-------------------------------------------------------------------------------" '---Multidex---'
 @var checkbox hoverToolbarButton "Show top-right toolbar button only on mouse hover" 0
 @var checkbox hoverChatButtons "Show bottom-right chat buttons only on mouse hover" 0
 @var checkbox hoverArchiveSync "Show Archive Sync only on mouse hover" 0
 
-@var text Youtube " " '---YouTube---'
-@var checkbox hoverOverlay "Show YouTube overlay only on video hover" 0
+@var text Youtube "-------------------------------------------------------------------------------" '---YouTube---'
+@var checkbox hoverHeader "Show YouTube Header only on header hover" 0
 
-@var text YouTubeChat " " 'YouTube Chat'
+@var text YouTubeChat "-------------------------------------------------------------------------------" '---YouTube Chat---'
 @var checkbox showLabel "Show \"Live chat replay\" as label" 0
 @var checkbox showDropdownMenu "Show dropdown menu again" 0
 @var checkbox showButtons "Show hidden buttons (for use on YouTube)" 0
 
-@var text Hyperchat " " '---Hyperchat---'
+@var text Hyperchat "-------------------------------------------------------------------------------" '---Hyperchat---'
 @var checkbox hideHolodexInfo "Hide Hyperchat Notice (Please 👍 and ⭐ Hyperchat)" 0
 
-@var text Themes " " '---Themes---'
+@var text Themes "-------------------------------------------------------------------------------" '---Themes---'
 @var select theme "Select a theme" {
 "None*": "none",
 "Aqua": "aqutan"
 }
 
-@var text Scrollbars " " '---Scrollbars---'
+@var text Scrollbars "-------------------------------------------------------------------------------" '---Scrollbars---'
 @var checkbox hideHolodexScrollbars "Hide Holodex scrollbars" 0
 @var checkbox hideYoutubeChatScrollbars "Hide YouTube-Chat scrollbars" 0
 @var checkbox hideHyperchatScrollbars "Hide Hyperchat scrollbars" 0
@@ -362,6 +363,26 @@
 		#label-icon) {
 			color: rgb(240, 98, 146) !important;
 			text-shadow: -2px 2px 1.0px rgb(59, 136, 213);
+		}
+	}
+}
+@-moz-document url-prefix("https://www.youtube.com/watch") {
+
+	if hoverHeader {
+		#masthead-container {
+			opacity: 0 !important;
+		}
+
+		#masthead-container:hover {
+			opacity: 1 !important;
+		}
+
+		#content > #masthead-container:hover:has(~ #page-manager.ytd-app) ~ #page-manager.ytd-app {
+			margin-top: var(--ytd-toolbar-height) !important;
+		}
+
+		#page-manager.ytd-app {
+			margin-top: 0 !important;
 		}
 	}
 }
