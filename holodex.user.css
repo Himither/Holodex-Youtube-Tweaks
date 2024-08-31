@@ -350,8 +350,12 @@
 
 	if theme==aqutan {
 
-		div#content #author-name {
+		div#content #author-name:not(.moderator) {
 			color: rgb(59, 136, 213) !important;
+		}
+
+		div#content #author-name.moderator {
+			color: green !important;
 		}
 
 		div#content :is(#author-name.member,
@@ -400,8 +404,12 @@
 
 	if theme==aqutan {
 
-		div.content > div > div > div > a > span {
+		div.content > div > div > div > a > span:not(.text-moderator-light) {
 			color: rgb(59, 136, 213) !important;
+		}
+		
+    div.content > div > div > div > a > span.text-moderator-light {
+			color: green !important;
 		}
 
 		div.content > div > div > div > a > span.text-member-light {
