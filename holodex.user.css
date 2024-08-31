@@ -187,7 +187,7 @@
 			border-radius: 50%;
 		}
 
-		.v-card .v-avatar {
+		.v-menu__content .v-avatar {
 			height: 0 !important;
 			width: 0 !important;
 			padding-left: 40px !important;
