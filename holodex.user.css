@@ -4,7 +4,7 @@
 @namespace      https://github.com/Himither
 @homepageURL		https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        1.1.7
+@version        1.1.8
 @updateURL	    https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         Himither
@@ -490,7 +490,7 @@
 
 
 	if yt-hoverSecondary {
-		#columns:has(iframe[src*="about:blank"]) #secondary {
+		#columns:has(ytd-live-chat-frame[collapsed]) #secondary {
 			position: absolute !important;
 			right: 0 !important;
 			opacity: 0 !important;
@@ -502,12 +502,12 @@
 			transition: z-index 300ms ease-in-out !important;
 		}
 
-		#content:has(iframe[src*="about:blank"]):not(:has(:is(#primary:hover, #masthead-container:hover))) #primary {
+		#content:has(ytd-live-chat-frame[collapsed]):not(:has(:is(#primary:hover, #masthead-container:hover))) #primary {
 			z-index: 0 !important;
 		}
 
 
-		#content:has(iframe[src*="about:blank"]):not(:has(:is(#primary:hover, #masthead-container:hover))) #secondary {
+		#content:has(ytd-live-chat-frame[collapsed]):not(:has(:is(#primary:hover, #masthead-container:hover))) #secondary {
 			opacity: 1 !important;
 			background-color: black !important;
 		}
