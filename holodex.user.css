@@ -4,18 +4,18 @@
 @namespace      https://github.com/Himither
 @homepageURL		https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        1.1.5
+@version        1.1.6
 @updateURL	    https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         Himither
 @license        MIT
 @preprocessor   stylus
 
-@var text Holodex "-------------------------------------------------------------------------------" '---Holodex---'
+@var text Holodex "------------------------------------------------------" '---Holodex---'
 @var select darkmode "Dark Mode"   {
   "Default": "normal",
   "Darker*": "darker",
-  "La+ Darknesss": "blacker"
+  "La+ Darknesss": "darkness"
 }
 @var number sidemenuWidth "Set navigation menu width (170px - 1080px)" [220, 170, 1080, 1, "px"]
 @var checkbox borderlessHolodex "Borderless Holodex" 1
@@ -28,33 +28,38 @@
 @var text avatarCustom "Custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
 @var range avatarSize "Adjust avatar size" [100, 50, 150, 1, "%"]
 
-@var text Singleview "-------------------------------------------------------------------------------" '---Singleview---'
+@var text Singleview "------------------------------------------------------" '---Singleview---'
 @var number sidebarWidth  "Adjust the chat/TLdex width (170px - 1080px)" [340, 170, 1080, 1, "px"]
 @var checkbox videoMaxHeight "Increase video height to 100% (Best with Holodex Theatre Mode)" 0
 
-@var text Multidex "-------------------------------------------------------------------------------" '---Multidex---'
+@var text Multidex "------------------------------------------------------" '---Multidex---'
 @var checkbox hoverToolbarButton "Show top-right toolbar button only on mouse hover" 0
 @var checkbox hoverChatButtons "Show bottom-right chat buttons only on mouse hover" 0
 @var checkbox hoverArchiveSync "Show Archive Sync only on mouse hover" 0
 
-@var text Youtube "-------------------------------------------------------------------------------" '---YouTube---'
-@var checkbox hoverHeader "Show YouTube Header only on header hover" 0
+@var text Youtube "------------------------------------------------------" '---YouTube---'
+@var number yt-menuWidth "Change side menu width" [240, 170, 1080, 1, "px"]
+@var checkbox yt-black "Use black background" 0
+@var checkbox yt-borderlessChat "Hide chat borders" 0
+@var checkbox yt-useWidth "Use 100% width when watching videos (progess bar is a bit iffy)" 0
+@var checkbox yt-hoverHeader "Show header only on hover" 0
+@var checkbox yt-hoverSecondary "Show right column only on hover, when chat is closed" 0
 
-@var text YouTubeChat "-------------------------------------------------------------------------------" '---YouTube Chat---'
+@var text YouTubeChat "------------------------------------------------------" '---YouTube Chat---'
 @var checkbox showLabel "Show \"Live chat replay\" as label" 0
 @var checkbox showDropdownMenu "Show dropdown menu again" 0
 @var checkbox showButtons "Show hidden buttons (for use on YouTube)" 0
 
-@var text Hyperchat "-------------------------------------------------------------------------------" '---Hyperchat---'
+@var text Hyperchat "------------------------------------------------------" '---Hyperchat---'
 @var checkbox hideHolodexInfo "Hide Hyperchat Notice (Please 👍 and ⭐ Hyperchat)" 0
 
-@var text Themes "-------------------------------------------------------------------------------" '---Themes---'
+@var text Themes "------------------------------------------------------" '---Themes---'
 @var select theme "Select a theme" {
 "None*": "none",
 "Aqua": "aqutan"
 }
 
-@var text Scrollbars "-------------------------------------------------------------------------------" '---Scrollbars---'
+@var text Scrollbars "------------------------------------------------------" '---Scrollbars---'
 @var checkbox hideHolodexScrollbars "Hide Holodex scrollbars" 0
 @var checkbox hideYoutubeChatScrollbars "Hide YouTube-Chat scrollbars" 0
 @var checkbox hideHyperchatScrollbars "Hide Hyperchat scrollbars" 0
@@ -94,7 +99,7 @@
 		}
 	}
 
-	if darkmode==blacker {
+	if darkmode==darkness {
 
 		.v-main,
 		.v-sheet,
@@ -179,7 +184,7 @@
 
 	if changeAvatar!="none" {
 
-		header .v-avatar,
+		header:not(.mv-toolbar) .v-avatar,
 		.v-menu__content .v-avatar {
 			height: 0 !important;
 			width: 0 !important;
@@ -191,6 +196,7 @@
 		}
 	}
 }
+
 @-moz-document url-prefix("https://holodex.net/watch") {
 
 	.sidebar {
@@ -208,6 +214,7 @@
 		}
 	}
 }
+
 @-moz-document url-prefix("https://holodex.net/multiview") {
 
 	if hoverToolbarButton {
@@ -233,6 +240,7 @@
 			width: 100% !important;
 			opacity: 0 !important;
 			transition: opacity 300ms ease-in-out !important;
+			background-color: black !important;
 		}
 
 		.vue-grid-item > .mv-cell > .cell-content > .d-flex:last-child:not(.cell-control):hover {
@@ -273,7 +281,7 @@
 		margin-left: 4px !important;
 	}
 
-	if darkmode==darker or darkmode==blacker {
+	if darkmode==darker or darkmode==darkness {
 
 		yt-live-chat-message-input-renderer,
 		yt-live-chat-header-renderer,
@@ -290,7 +298,7 @@
 		}
 	}
 
-	if darkmode==blacker {
+	if darkmode==darkness {
 
 		#input-container,
 		#search-panel,
@@ -366,29 +374,149 @@
 		}
 	}
 }
+
+@-moz-document url-prefix("https://www.youtube.com/") {
+
+	#guide-content,
+	#guide-renderer {
+		width: yt-menuWidth !important;
+	}
+}
+
 @-moz-document url-prefix("https://www.youtube.com/watch") {
 
-	if hoverHeader {
-		#masthead-container {
-			opacity: 0 !important;
+	:root {
+		--chat-height: calc(100dvh - 56px);
+
+		if yt-hoverHeader {
+			--chat-height: calc(100dvh - 104px);
+		}
+	}
+
+	if yt-black {
+		ytd-app {
+			background: black !important;
+		}
+	}
+
+	if yt-borderlessChat {
+		#chat {
+			border-color: transparent !important;
+		}
+	}
+
+
+	if yt-useWidth {
+		#columns {
+			max-width: 100% !important;
 		}
 
-		#masthead-container:hover {
-			opacity: 1 !important;
+		.ytp-player-content,
+		.ytp-iv-video-content,
+		.html5-video-container,
+		video.video-stream {
+			width: 100% !important;
+			height: 100% !important;
 		}
 
-		#content > #masthead-container:hover:has(~ #page-manager.ytd-app) ~ #page-manager.ytd-app {
-			margin-top: var(--ytd-toolbar-height) !important;
+		.ytp-chrome-bottom {
+			width: 100% !important;
+			left: 0 !important;
+		}
+
+		.ytp-player-content.ytp-iv-player-content {
+			left: 0 !important;
+			right: 0 !important;
+		}
+
+		#player {
+			height: calc(100dvh - 24px) !important;
+		}
+
+		#chat-container {
+			height: calc(100dvh - 24px) !important;
+		}
+
+		#chat {
+			height: var(--chat-height) !important;
+		}
+
+		#player {
+			display: inline-flex !important;
+			width: 100% !important;
+			align-items: center !important;
+		}
+
+		#player-container-outer {
+			width: 100% !important;
+		}
+
+		.ytp-tooltip:not([aria-hidden="true"]) {
+			top: calc(100% - 96px) !important;
+		}
+
+		.ytp-tooltip:not([aria-hidden="true"]).ytp-preview {
+			top: calc(100% - 224px) !important;
+		}
+
+		#player:has(.ytp-show-tiles) .video-stream {
+			display: none !important;
+		}
+	}
+
+	if yt-hoverHeader {
+
+		#primary {
+			position: relative !important;
+		}
+
+		#secondary {
+			padding-top: 56px !important;
 		}
 
 		#page-manager.ytd-app {
 			margin-top: 0 !important;
 		}
+
+		#content #masthead-container {
+			opacity: 0 !important;
+		}
+
+		#content:not(:has(#chat-container:hover)) #masthead-container:hover {
+			opacity: 1 !important;
+			background-color: black !important;
+		}
+	}
+
+
+	if yt-hoverSecondary {
+		#columns:has(iframe[src*="about:blank?playerOffset"]) #secondary {
+			position: absolute !important;
+			right: 0 !important;
+			opacity: 0 !important;
+			transition: opacity 300ms ease-in-out, background 300ms ease-in-out !important;
+		}
+
+		#primary {
+			z-index: 1 !important;
+			transition: z-index 300ms ease-in-out !important;
+		}
+
+		#content:has(iframe[src*="about:blank?playerOffset"]):not(:has(:is(#primary:hover, #masthead-container:hover))) #primary {
+			z-index: 0 !important;
+		}
+
+
+		#content:has(iframe[src*="about:blank?playerOffset"]):not(:has(:is(#primary:hover, #masthead-container:hover))) #secondary {
+			opacity: 1 !important;
+			background-color: black !important;
+		}
 	}
 }
+
 @-moz-document url-prefix("https://www.youtube.com/embed/hyperchat_embed") {
 
-	if darkmode==darker or darkmode==blacker {
+	if darkmode==darker or darkmode==darkness {
 
 		.hyperchat-root,
 		.hyperchat-root > div.w-full > div.flex {
