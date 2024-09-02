@@ -4,7 +4,7 @@
 @namespace      https://github.com/Himither
 @homepageURL		https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        1.1.12
+@version        1.1.13
 @updateURL	    https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         Himither
@@ -499,45 +499,41 @@
 
 
 	if yt-hoverSecondary {
-				
+		
 		#primary {
-			z-index: 1 !important;
-			transition: margin-right 150ms 150ms !important;
-			padding-right: 0 !important;
-			margin-right: var(--ytd-margin-6x) !important;
-		}
-		
-		#secondary {
-			transition: opacity 300ms 150ms, padding 300ms, margin 300ms !important;
-		}
-				
-		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary,
- 		#columns:not(:has(#chat)):has(#secondary:hover) #primary  {
-			z-index: 0 !important;
-		}
-		
-		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary,
- 		#columns:not(:has(#chat)):has(#secondary:hover) #primary  {
-			opacity: 1 !important;
-			background-color: black !important;
-			margin-right: 450px !important;
-			transition: margin-right 150ms !important;
-		}
-
-
-		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary:hover,
- 		#columns:not(:has(#chat)) #secondary:hover  {
+			margin-left: 0 !important;
 			padding-left: var(--ytd-margin-6x) !important;
-			padding-right: var(--ytd-margin-6x) !important;
+		}
+								
+		#secondary {
+			transition: all 150ms ease-in-out !important;
+		}
+		
+			#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])):not(:has(#primary:hover)):hover #primary,
+ 		#columns:not(:has(#chat)):not(:has(#primary:hover)):hover #primary {
+			min-width: var(--ytd-watch-flexy-min-player-width) !important;
+		}
+		
+		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])):not(:has(#primary:hover)):hover #secondary,
+ 		#columns:not(:has(#chat)):not(:has(#primary:hover)):hover #secondary {
 			opacity: 1 !important;
+			width: var(--ytd-watch-flexy-sidebar-width) !important;
+			padding-right: var(--ytd-margin-6x) !important;
+			padding-left: var(--ytd-margin-6x) !important;
+		}
+		
+		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])) #primary,
+ 		#columns:not(:has(#chat)) #primary {
+			min-width: 96% !important;
+			padding-right: 0 !important;
+			margin-right: auto !important;
 		}
 		
 		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary,
  		#columns:not(:has(#chat)) #secondary {
-			position: absolute !important;
-			right: 0 !important;
 			opacity: 0 !important;
-			background-color: black !important;
+			width: 0 !important;
+			min-width: 0 !important;
 		}
 	}
 }
