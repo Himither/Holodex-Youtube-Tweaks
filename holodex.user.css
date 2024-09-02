@@ -4,7 +4,7 @@
 @namespace      https://github.com/Himither
 @homepageURL		https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        1.1.7
+@version        1.1.8
 @updateURL	    https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         Himither
@@ -433,26 +433,27 @@
 			z-index: 10 !important;
 		}
 
-		#player {
-			height: calc(100dvh - 24px) !important;
+		#primary {
+			padding-top: 0 !important;
 		}
-
+		
+		#player {
+			display: inline-flex !important;
+			height: 100dvh !important;
+			width: 100% !important;
+			align-items: center !important;
+		}
+		
+		#player-container-outer {
+			width: 100% !important;
+		}
+		
 		#chat-container {
-			height: calc(100dvh - 24px) !important;
+			height: calc(100dvh - var(--ytd-margin-6x)) !important;
 		}
 
 		#chat {
 			height: var(--chat-height) !important;
-		}
-
-		#player {
-			display: inline-flex !important;
-			width: 100% !important;
-			align-items: center !important;
-		}
-
-		#player-container-outer {
-			width: 100% !important;
 		}
 
 		.ytp-tooltip:not([aria-hidden="true"]) {
@@ -498,6 +499,7 @@
 		#columns:has(ytd-live-chat-frame[collapsed]):has(ytd-playlist-panel-renderer:is([collapsed],[hidden])) #secondary {
 			position: absolute !important;
 			right: 0 !important;
+			padding-left: var(--ytd-margin-6x) !important;
 			opacity: 0 !important;
 			transition: opacity 300ms ease-in-out, background 300ms ease-in-out !important;
 		}
