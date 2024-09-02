@@ -4,7 +4,7 @@
 @namespace      https://github.com/Himither
 @homepageURL		https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        1.1.10
+@version        1.1.11
 @updateURL	    https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         Himither
@@ -410,10 +410,26 @@
 
 
 	if yt-useWidth {
+		
 		#columns {
 			max-width: 100% !important;
 		}
-
+		
+		#primary {
+			padding-top: 0 !important;
+		}
+		
+		#player {
+			display: inline-flex !important;
+			height: 100dvh !important;
+			width: 100% !important;
+			align-items: center !important;
+		}
+		
+		#player-container-outer {
+			width: 100% !important;
+		}
+		
 		.ytp-player-content,
 		.ytp-iv-video-content,
 		.html5-video-container,
@@ -435,34 +451,19 @@
 		.ytp-cued-thumbnail-overlay {
 			z-index: 10 !important;
 		}
-
-		#primary {
-			padding-top: 0 !important;
-		}
 		
-		#player {
-			display: inline-flex !important;
-			height: 100dvh !important;
-			width: 100% !important;
-			align-items: center !important;
-		}
-		
-		
-		#player-container-outer {
-			width: 100% !important;
-		}
-		
-		#secondary:has(#playlist[hidden]) #chat-container:not(:has(#chat[collapsed])) {
+		#secondary:has(#playlist[hidden]) #chat-container:has(#chat):not(:has(#chat[collapsed])) {
 			height: calc(100dvh - 56px) !important;
 		}
 		
-		#secondary:has(#playlist[collapsed]) #chat-container:not(:has(#chat[collapsed])) {
+		#secondary:has(#playlist[collapsed]) #chat-container:has(#chat):not(:has(#chat[collapsed])) {
 			height: calc(100dvh - 56px - var(--ytd-margin-6x) - 68px) !important;
 			margin-bottom: var(--ytd-margin-6x);
 		}
 
 		#chat:not([collapsed]) {
 			height: 100% !important;
+			min-height: 0 !important;
 			margin-bottom: 0 !important;
 		}
 		
@@ -494,43 +495,46 @@
 			opacity: 1 !important;
 			background-color: black !important;
 		}
-		
-		#primary {
-			position: relative !important;
-		}
 	}
 
 
 	if yt-hoverSecondary {
 		
-		#columns:has(ytd-live-chat-frame[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary {
-			position: absolute !important;
-			right: 0 !important;
-			padding-left: var(--ytd-margin-6x) !important;
-			opacity: 0 !important;
-			transition: all 300ms 150ms !important;
-		}
-
 		#primary {
 			z-index: 1 !important;
 			transition: margin-right 150ms 150ms !important;
 		}
-
-		#content:has(ytd-live-chat-frame[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary {
+		
+		#secondary {
+			transition: opacity 300ms 150ms, padding 300ms, margin 300ms !important;
+		}
+				
+		#content:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary,
+ 		#columns:not(:has(#chat)):has(#secondary:hover) #primary  {
 			z-index: 0 !important;
 		}
-
-
-		#content:has(ytd-live-chat-frame[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary:hover {
+		
+		#content:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary,
+ 		#columns:not(:has(#chat)):has(#secondary:hover) #primary  {
 			opacity: 1 !important;
 			background-color: black !important;
+			margin-right: calc(var(--ytd-watch-flexy-sidebar-width) - var(--ytd-margin-6x)) !important;
+			transition: margin-right 150ms !important;
+		}
+
+
+		#content:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary:hover,
+ 		#columns:not(:has(#chat)) #secondary:hover  {
+			padding-right: var(--ytd-margin-6x) !important;
+			opacity: 1 !important;
 		}
 		
-		#content:has(ytd-live-chat-frame[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary {
-			opacity: 1 !important;
-			background-color: black !important;
-			margin-right: calc(var(--ytd-watch-flexy-sidebar-width) + var(--ytd-margin-6x)) !important;
-			transition: margin-right 150ms !important;
+		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary,
+ 		#columns:not(:has(#chat)) #secondary {
+			position: absolute !important;
+			right: 0 !important;
+			margin-left: var(--ytd-margin-6x) !important;
+			opacity: 0 !important;
 		}
 	}
 }
