@@ -4,7 +4,7 @@
 @namespace      https://github.com/Himither
 @homepageURL		https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        1.1.8
+@version        1.1.9
 @updateURL	    https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         Himither
@@ -385,13 +385,6 @@
 
 @-moz-document url-prefix("https://www.youtube.com/watch") {
 
-	:root {
-		--chat-height: calc(100dvh - 56px);
-
-		if yt-hoverHeader {
-			--chat-height: calc(100dvh - 104px);
-		}
-	}
 
 	if yt-black {
 		ytd-app {
@@ -402,6 +395,16 @@
 	if yt-borderlessChat {
 		#chat {
 			border-color: transparent !important;
+		}
+	}
+	
+	if yt-useWidth or yt-hoverHeader {
+			#page-manager.ytd-app {
+			margin-top: 0 !important;
+		}
+		
+		#secondary {
+			padding-top: 56px !important;
 		}
 	}
 
@@ -444,16 +447,27 @@
 			align-items: center !important;
 		}
 		
+		
 		#player-container-outer {
 			width: 100% !important;
 		}
 		
-		#chat-container {
-			height: calc(100dvh - var(--ytd-margin-6x)) !important;
+		#secondary:has(#playlist[hidden]) #chat-container:not(:has(#chat[collapsed])) {
+			height: calc(100dvh - 56px) !important;
+		}
+		
+		#secondary:has(#playlist[collapsed]) #chat-container:not(:has(#chat[collapsed])) {
+			height: calc(100dvh - 56px - var(--ytd-margin-6x) - 68px) !important;
+			margin-bottom: var(--ytd-margin-6x);
 		}
 
-		#chat {
-			height: var(--chat-height) !important;
+		#chat:not([collapsed]) {
+			height: 100% !important;
+			margin-bottom: 0 !important;
+		}
+		
+		#secondary #chat-container:not(:has(#chat[collapsed])) #chat {
+			height: calc(100% - 56px) !important
 		}
 
 		.ytp-tooltip:not([aria-hidden="true"]) {
@@ -470,19 +484,8 @@
 	}
 
 	if yt-hoverHeader {
-
-		#primary {
-			position: relative !important;
-		}
-
-		#secondary {
-			padding-top: 56px !important;
-		}
-
-		#page-manager.ytd-app {
-			margin-top: 0 !important;
-		}
-
+		
+		
 		#content #masthead-container {
 			opacity: 0 !important;
 		}
@@ -491,29 +494,33 @@
 			opacity: 1 !important;
 			background-color: black !important;
 		}
+		
+		#primary {
+			position: relative !important;
+		}
 	}
 
 
 	if yt-hoverSecondary {
 		
-		#columns:has(ytd-live-chat-frame[collapsed]):has(ytd-playlist-panel-renderer:is([collapsed],[hidden])) #secondary {
+		#columns:has(ytd-live-chat-frame[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary {
 			position: absolute !important;
 			right: 0 !important;
 			padding-left: var(--ytd-margin-6x) !important;
 			opacity: 0 !important;
-			transition: opacity 300ms ease-in-out, background 300ms ease-in-out !important;
+			transition: all 300ms !important;
 		}
 
 		#primary {
 			z-index: 1 !important;
 		}
 
-		#content:has(ytd-live-chat-frame[collapsed]):has(ytd-playlist-panel-renderer:is([collapsed],[hidden])):has(#secondary:hover) #primary {
+		#content:has(ytd-live-chat-frame[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary {
 			z-index: 0 !important;
 		}
 
 
-		#content:has(ytd-live-chat-frame[collapsed]):has(ytd-playlist-panel-renderer:is([collapsed],[hidden])) #secondary:hover {
+		#content:has(ytd-live-chat-frame[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary:hover {
 			opacity: 1 !important;
 			background-color: black !important;
 		}
