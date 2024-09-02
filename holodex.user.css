@@ -506,7 +506,6 @@
 
 		#primary {
 			z-index: 1 !important;
-			transition: z-index 300ms ease-in-out !important;
 		}
 
 		#content:has(ytd-live-chat-frame[collapsed]):has(ytd-playlist-panel-renderer:is([collapsed],[hidden])):has(#secondary:hover) #primary {
