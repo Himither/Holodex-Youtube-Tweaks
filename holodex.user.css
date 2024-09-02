@@ -4,7 +4,7 @@
 @namespace      https://github.com/Himither
 @homepageURL		https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        1.1.11
+@version        1.1.12
 @updateURL	    https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         Himither
@@ -499,32 +499,35 @@
 
 
 	if yt-hoverSecondary {
-		
+				
 		#primary {
 			z-index: 1 !important;
 			transition: margin-right 150ms 150ms !important;
+			padding-right: 0 !important;
+			margin-right: var(--ytd-margin-6x) !important;
 		}
 		
 		#secondary {
 			transition: opacity 300ms 150ms, padding 300ms, margin 300ms !important;
 		}
 				
-		#content:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary,
+		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary,
  		#columns:not(:has(#chat)):has(#secondary:hover) #primary  {
 			z-index: 0 !important;
 		}
 		
-		#content:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary,
+		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary,
  		#columns:not(:has(#chat)):has(#secondary:hover) #primary  {
 			opacity: 1 !important;
 			background-color: black !important;
-			margin-right: calc(var(--ytd-watch-flexy-sidebar-width) - var(--ytd-margin-6x)) !important;
+			margin-right: 450px !important;
 			transition: margin-right 150ms !important;
 		}
 
 
-		#content:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary:hover,
+		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary:hover,
  		#columns:not(:has(#chat)) #secondary:hover  {
+			padding-left: var(--ytd-margin-6x) !important;
 			padding-right: var(--ytd-margin-6x) !important;
 			opacity: 1 !important;
 		}
@@ -533,8 +536,8 @@
  		#columns:not(:has(#chat)) #secondary {
 			position: absolute !important;
 			right: 0 !important;
-			margin-left: var(--ytd-margin-6x) !important;
 			opacity: 0 !important;
+			background-color: black !important;
 		}
 	}
 }
