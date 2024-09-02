@@ -4,7 +4,7 @@
 @namespace      https://github.com/Himither
 @homepageURL		https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        1.1.9
+@version        1.1.10
 @updateURL	    https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         Himither
@@ -43,7 +43,7 @@
 @var checkbox yt-borderlessChat "Hide chat borders" 0
 @var checkbox yt-useWidth "Use 100% width when watching videos (progess bar is a bit iffy)" 0
 @var checkbox yt-hoverHeader "Show header only on hover" 0
-@var checkbox yt-hoverSecondary "Show right column only on hover, when chat is closed" 0
+@var checkbox yt-hoverSecondary "Show right column only on hover, when chat AND playlist are closed" 0
 
 @var text YouTubeChat "------------------------------------------------------" '---YouTube Chat---'
 @var checkbox showLabel "Show \"Live chat replay\" as label" 0
@@ -508,11 +508,12 @@
 			right: 0 !important;
 			padding-left: var(--ytd-margin-6x) !important;
 			opacity: 0 !important;
-			transition: all 300ms !important;
+			transition: all 300ms 150ms !important;
 		}
 
 		#primary {
 			z-index: 1 !important;
+			transition: margin-right 150ms 150ms !important;
 		}
 
 		#content:has(ytd-live-chat-frame[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary {
@@ -523,6 +524,13 @@
 		#content:has(ytd-live-chat-frame[collapsed]):has(#playlist:is([collapsed],[hidden])) #secondary:hover {
 			opacity: 1 !important;
 			background-color: black !important;
+		}
+		
+		#content:has(ytd-live-chat-frame[collapsed]):has(#playlist:is([collapsed],[hidden])):has(#secondary:hover) #primary {
+			opacity: 1 !important;
+			background-color: black !important;
+			margin-right: calc(var(--ytd-watch-flexy-sidebar-width) + var(--ytd-margin-6x)) !important;
+			transition: margin-right 150ms !important;
 		}
 	}
 }
