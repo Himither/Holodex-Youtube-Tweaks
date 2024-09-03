@@ -4,7 +4,7 @@
 @namespace      		https://github.com/Himither
 @homepageURL				https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL					https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        		1.1.20
+@version        		1.1.21
 @updateURL	    		https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    		Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         		Himither
@@ -207,7 +207,6 @@
 		}
 	}
 }
-
 @-moz-document url-prefix("https://holodex.net/watch") {
 
 	.sidebar {
@@ -225,7 +224,6 @@
 		}
 	}
 }
-
 @-moz-document url-prefix("https://holodex.net/multiview") {
 
 	if md-hoverToolbarButton {
@@ -268,124 +266,6 @@
 		}
 	}
 }
-
-@-moz-document url-prefix("https://www.youtube.com/embed") {
-
-	if hd-hoverOverlay {
-
-		#movie_player:not(:hover) {
-			.ytp-large-play-button,
-			.ytp-gradient-top,
-			.ytp-chrome-top,
-			.ytp-gradient-bottom,
-			.ytp-chrome-bottom,
-			.ytp-player-content {
-				opacity: 0;
-			}
-		}
-	}
-}
-
-@-moz-document url-prefix("https://www.youtube.com/live_chat") {
-
-	#primary-content.yt-live-chat-header-renderer {
-		margin-left: 4px !important;
-	}
-
-	if hd-darkmode==darker or hd-darkmode==darknesss {
-
-		yt-live-chat-message-input-renderer,
-		yt-live-chat-header-renderer,
-		yt-live-chat-ticker-renderer,
-		#chat-messages,
-		yt-formatted-string,
-		{
-			background: black !important;
-		}
-
-		yt-icon-button,
-		{
-			background: transparent !important;
-		}
-	}
-
-	if hd-darkmode==darknesss {
-
-		#input-container,
-		#search-panel,
-		tp-yt-paper-listbox.yt-dropdown-menu {
-			background: black !important;
-		}
-	}
-
-	if !ytc-showDropdownMenu {
-
-		yt-live-chat-header-renderer[prevent-chat-header-overflow] #view-selector.yt-live-chat-header-renderer {
-			display: none !important;
-		}
-
-		span#title::after {
-			content: "Live" !important;
-			white-space: pre !important;
-			color: white !important;
-			display: block !important;
-		}
-
-		if ytc-showLabel {
-
-			span#title::after {
-				content: "Live chat replay" !important;
-				white-space: pre !important;
-				color: white !important;
-				display: block !important;
-			}
-		}
-	}
-
-	if !ytc-showButtons {
-
-		yt-live-chat-button,
-		div#close-button {
-			display: none !important;
-		}
-	}
-
-	#separator.yt-live-chat-renderer,
-	#panel-pages.yt-live-chat-renderer {
-		border: black !important;
-	}
-
-	if ytc-hideScrollbars {
-
-		* {
-			scrollbar-width: none !important;
-		}
-	}
-
-	if hd-theme==aqutan {
-
-		div#content #author-name:not(.moderator) {
-			color: rgb(59, 136, 213) !important;
-		}
-
-		div#content #author-name.moderator {
-			color: green !important;
-		}
-
-		div#content :is(#author-name.member,
-		span#title::after) {
-			color: rgb(240, 98, 146) !important;
-		}
-
-		span#title::after,
-		#trigger :is(#label-text,
-		#label-icon) {
-			color: rgb(240, 98, 146) !important;
-			text-shadow: -2px 2px 1.0px rgb(59, 136, 213);
-		}
-	}
-}
-
 @-moz-document url-prefix("https://www.youtube.com/") {
 
 	#guide-content,
@@ -393,7 +273,6 @@
 		width: yt-menuWidth !important;
 	}
 }
-
 @-moz-document url-prefix("https://www.youtube.com/watch") {
 
 	if yt-black {
@@ -551,7 +430,121 @@
 		}
 	}
 }
+@-moz-document url-prefix("https://www.youtube.com/embed") {
 
+	if hd-hoverOverlay {
+
+		#movie_player:not(:hover) {
+			.ytp-large-play-button,
+			.ytp-gradient-top,
+			.ytp-chrome-top,
+			.ytp-gradient-bottom,
+			.ytp-chrome-bottom,
+			.ytp-player-content {
+				opacity: 0;
+			}
+		}
+	}
+}
+@-moz-document url-prefix("https://www.youtube.com/live_chat") {
+
+	#primary-content.yt-live-chat-header-renderer {
+		margin-left: 4px !important;
+	}
+
+	if hd-darkmode==darker or hd-darkmode==darknesss {
+
+		yt-live-chat-message-input-renderer,
+		yt-live-chat-header-renderer,
+		yt-live-chat-ticker-renderer,
+		#chat-messages,
+		yt-formatted-string,
+		{
+			background: black !important;
+		}
+
+		yt-icon-button,
+		{
+			background: transparent !important;
+		}
+	}
+
+	if hd-darkmode==darknesss {
+
+		#input-container,
+		#search-panel,
+		tp-yt-paper-listbox.yt-dropdown-menu {
+			background: black !important;
+		}
+	}
+
+	if !ytc-showDropdownMenu {
+
+		yt-live-chat-header-renderer[prevent-chat-header-overflow] #view-selector.yt-live-chat-header-renderer {
+			display: none !important;
+		}
+
+		span#title::after {
+			content: "Live" !important;
+			white-space: pre !important;
+			color: white !important;
+			display: block !important;
+		}
+
+		if ytc-showLabel {
+
+			span#title::after {
+				content: "Live chat replay" !important;
+				white-space: pre !important;
+				color: white !important;
+				display: block !important;
+			}
+		}
+	}
+
+	if !ytc-showButtons {
+
+		yt-live-chat-button,
+		div#close-button {
+			display: none !important;
+		}
+	}
+
+	#separator.yt-live-chat-renderer,
+	#panel-pages.yt-live-chat-renderer {
+		border: black !important;
+	}
+
+	if ytc-hideScrollbars {
+
+		* {
+			scrollbar-width: none !important;
+		}
+	}
+
+	if hd-theme==aqutan {
+
+		div#content #author-name:not(.moderator) {
+			color: rgb(59, 136, 213) !important;
+		}
+
+		div#content #author-name.moderator {
+			color: green !important;
+		}
+
+		div#content :is(#author-name.member,
+		span#title::after) {
+			color: rgb(240, 98, 146) !important;
+		}
+
+		span#title::after,
+		#trigger :is(#label-text,
+		#label-icon) {
+			color: rgb(240, 98, 146) !important;
+			text-shadow: -2px 2px 1.0px rgb(59, 136, 213);
+		}
+	}
+}
 @-moz-document url-prefix("https://www.youtube.com/embed/hyperchat_embed") {
 
 	if hd-darkmode==darker or hd-darkmode==darknesss {
@@ -598,7 +591,6 @@
 		}
 	}
 }
-
 @-moz-document url-prefix("https://") {
 	if all-hideScrollbars {
 
