@@ -4,7 +4,7 @@
 @namespace      https://github.com/Himither
 @homepageURL		https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        1.1.16
+@version        1.1.17
 @updateURL	    https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         Himither
@@ -448,8 +448,8 @@
 		}
 
 		.ytp-chrome-bottom {
-			width: 100% !important;
-			left: 0 !important;
+			left: 50%;
+    	transform: translateX(-50%);
 		}
 
 		.ytp-player-content.ytp-iv-player-content {
