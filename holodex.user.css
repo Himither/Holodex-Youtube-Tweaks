@@ -4,7 +4,7 @@
 @namespace      		https://github.com/Himither
 @homepageURL				https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL					https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        		1.1.22
+@version        		1.1.23
 @updateURL	    		https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    		Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         		Himither
@@ -42,7 +42,7 @@
 @var text Singleview "------------------------------------------------------" '---Singleview---'
 
 @var number 				sw-sidebarWidth  				"Adjust the chat/TLdex width (170px - 1080px)" [340, 170, 1080, 1, "px"]
-@var checkbox 			sw-videoHeight 					"Increase video height to 100% (Best with Holodex Theatre Mode)" 0
+@var checkbox 			sw-videoHeight 					"Increase video container height to 100%" 0
 @var checkbox				sw-videoRound						"Add rounded corners and a bit of padding to the video" 0
 
 @var text Multidex "------------------------------------------------------" '---Multidex---'
@@ -222,7 +222,7 @@
 		}
 
 		.video {
-			height: calc(100dvh - var(--ytd-toolbar-height)) !important;
+			height: calc(100dvh - 56px) !important;
 		}
 	}
 
