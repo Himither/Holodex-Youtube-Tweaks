@@ -4,7 +4,7 @@
 @namespace      		https://github.com/Himither
 @homepageURL				https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL					https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        		1.1.21
+@version        		1.1.22
 @updateURL	    		https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    		Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         		Himither
@@ -43,6 +43,7 @@
 
 @var number 				sw-sidebarWidth  				"Adjust the chat/TLdex width (170px - 1080px)" [340, 170, 1080, 1, "px"]
 @var checkbox 			sw-videoHeight 					"Increase video height to 100% (Best with Holodex Theatre Mode)" 0
+@var checkbox				sw-videoRound						"Add rounded corners and a bit of padding to the video" 0
 
 @var text Multidex "------------------------------------------------------" '---Multidex---'
 
@@ -207,6 +208,7 @@
 		}
 	}
 }
+
 @-moz-document url-prefix("https://holodex.net/watch") {
 
 	.sidebar {
@@ -223,7 +225,14 @@
 			height: calc(100dvh - var(--ytd-toolbar-height)) !important;
 		}
 	}
+
+	if sw-videoRound {
+		.v-main__wrap > div > div > div > div[style] {
+			padding: 0 16px !important;
+		}
+	}
 }
+
 @-moz-document url-prefix("https://holodex.net/multiview") {
 
 	if md-hoverToolbarButton {
@@ -242,7 +251,7 @@
 
 	if md-hoverChatButtons {
 
-		.vue-grid-item>.mv-cell>.cell-content>.d-flex:last-child:not(.cell-control) {
+		.vue-grid-item > .mv-cell > .cell-content > .d-flex:last-child:not(.cell-control) {
 			position: absolute !important;
 			right: 0 !important;
 			bottom: 0 !important;
@@ -252,7 +261,7 @@
 			background-color: black !important;
 		}
 
-		.vue-grid-item>.mv-cell>.cell-content>.d-flex:last-child:not(.cell-control):hover {
+		.vue-grid-item > .mv-cell > .cell-content > .d-flex:last-child:not(.cell-control):hover {
 			opacity: 1 !important;
 		}
 	}
@@ -261,11 +270,13 @@
 		.sync-bar.d-flex {
 			opacity: 0 !important;
 		}
+
 		.sync-bar.d-flex:hover {
 			opacity: 1 !important;
 		}
 	}
 }
+
 @-moz-document url-prefix("https://www.youtube.com/") {
 
 	#guide-content,
@@ -273,6 +284,7 @@
 		width: yt-menuWidth !important;
 	}
 }
+
 @-moz-document url-prefix("https://www.youtube.com/watch") {
 
 	if yt-black {
@@ -430,6 +442,7 @@
 		}
 	}
 }
+
 @-moz-document url-prefix("https://www.youtube.com/embed") {
 
 	if hd-hoverOverlay {
@@ -445,7 +458,15 @@
 			}
 		}
 	}
+
+	if sw-videoRound {
+
+		video {
+			border-radius: 8px !important;
+		}
+	}
 }
+
 @-moz-document url-prefix("https://www.youtube.com/live_chat") {
 
 	#primary-content.yt-live-chat-header-renderer {
@@ -545,12 +566,13 @@
 		}
 	}
 }
+
 @-moz-document url-prefix("https://www.youtube.com/embed/hyperchat_embed") {
 
 	if hd-darkmode==darker or hd-darkmode==darknesss {
 
 		.hyperchat-root,
-		.hyperchat-root>div.w-full>div.flex {
+		.hyperchat-root > div.w-full > div.flex {
 			background: black !important;
 		}
 	}
@@ -578,19 +600,20 @@
 
 	if hd-theme==aqutan {
 
-		div.content>div>div>div>a>span:not(.text-moderator-light) {
+		div.content > div > div > div > a > span:not(.text-moderator-light) {
 			color: rgb(59, 136, 213) !important;
 		}
 
-		div.content>div>div>div>a>span.text-moderator-light {
+		div.content > div > div > div > a > span.text-moderator-light {
 			color: green !important;
 		}
 
-		div.content>div>div>div>a>span.text-member-light {
+		div.content > div > div > div > a > span.text-member-light {
 			color: rgb(240, 98, 146) !important;
 		}
 	}
 }
+
 @-moz-document url-prefix("https://") {
 	if all-hideScrollbars {
 
