@@ -4,7 +4,7 @@
 @namespace      		https://github.com/Himither
 @homepageURL				https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL					https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        		1.1.26
+@version        		1.1.27
 @updateURL	    		https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    		Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         		Himither
@@ -54,7 +54,7 @@
 @var text Youtube "------------------------------------------------------" '---YouTube---'
 
 @var number 				yt-menuWidth 						"Change side menu width (170px - 1080px)" [240, 170, 1080, 1, "px"]
-@var checkbox 			yt-black 								"The darkest of all modes - La+ Darknesss" 0
+@var checkbox 			yt-darknesss 						"The darkest of all modes - La+ Darknesss" 0
 @var checkbox 			yt-borderlessChat 			"Unleash chat (remove border around chat)" 0
 @var checkbox 			yt-hoverHeader 					"Show header only on hover" 0
 @var checkbox 			yt-useWidth 						"Use full width when watching videos (progess bar is a bit iffy)" 0
@@ -109,9 +109,9 @@
 		.mv-cell {
 			background-color: var(--v-background-base) !important;
 		}
-		
+
 		.watch-layout,
- 		div.tl-overlay {
+		div.tl-overlay {
 			background-color: #0f0f0f !important;
 		}
 
@@ -301,7 +301,7 @@
 
 @-moz-document url-prefix("https://www.youtube.com/watch") {
 
-	if yt-black {
+	if yt-darknesss {
 		html[dark], [dark] {
 			--yt-spec-base-background: black;
 		}
@@ -488,11 +488,11 @@
 		video {
 			border-radius: 8px !important;
 		}
-		
+
 		.ytp-cued-thumbnail-overlay-image {
 			background-size: contain !important;
 			-moz-background-size: contain !important;
-  		-webkit-background-size: contain !important;
+			-webkit-background-size: contain !important;
 		}
 	}
 }
