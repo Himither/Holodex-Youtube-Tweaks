@@ -4,7 +4,7 @@
 @namespace      		https://github.com/Himither
 @homepageURL				https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL					https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        		1.1.23
+@version        		1.1.24
 @updateURL	    		https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    		Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         		Himither
@@ -26,18 +26,18 @@
 	"Aqua": 					"aqutan"
 	
 }		
-@var number 				hd-sidemenuWidth 				"Set navigation menu width (170px - 1080px)" [220, 170, 1080, 1, "px"]
+@var number 				hd-sidemenuWidth 				"Change navigation menu width (170px - 1080px)" [220, 170, 1080, 1, "px"]
 @var checkbox 			hd-borderlessHolodex 		"Borderless Holodex" 1
 @var checkbox 			hd-hoverOverlay 				"Show video overlay only on video hover" 0
-@var select 				hd-changeAvatar 				"Change Avatar Image" {
+@var select 				hd-changeAvatar 				"Change the avatar image" {
 
 	"None": 					"none",
 	"Anchor*": 				"'https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/main/avatar/anchor.webp'",
 	"Custom": 				"hd-avatarCustom"
 	
 }
-@var text 					hd-avatarCustom 				"Custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
-@var range 					hd-avatarSize 					"Adjust avatar size" [100, 50, 150, 1, "%"]
+@var text 					hd-avatarCustom 				"Choose an custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
+@var range 					hd-avatarSize 					"Adjust the avatar size" [100, 50, 150, 1, "%"]
 
 @var text Singleview "------------------------------------------------------" '---Singleview---'
 
@@ -90,13 +90,14 @@
 
 	if hd-darkmode==darker {
 
-		.v-main,
-		.v-sheet,
-		.watch-layout,
 		.multiview,
 		.vue-grid-layout,
 		{
-			background-color: black !important;
+			background-color: var(--v-background-darken4) !important;
+		}
+
+		.watch-layout {
+			background-color: #0f0f0f !important;
 		}
 
 		nav .v-list.v-sheet,
@@ -104,10 +105,17 @@
 		.v-tabs-bar,
 		.v-expansion-panel-content,
 		.v-expansion-panel,
-		.v-input__slot,
 		.topic-chip,
-		.v-bottom-navigation {
+		.v-bottom-navigation,
+		.theme--dark.v-card,
+		.theme--dark.v-list,
+		.settings-group,
+		.mv-cell {
 			background-color: var(--v-background-base) !important;
+		}
+
+		.settings-group {
+			border-color: var(--v-background-base) !important;
 		}
 	}
 
@@ -122,32 +130,32 @@
 		.v-navigation-drawer__content,
 		.v-tabs-bar,
 		.v-expansion-panel-content,
-		.v-bottom-navigation {
-			background-color: black !important;
+		.v-bottom-navigation,
+		.v-input__slot {
+			background-color: var(--v-background-darken4) !important;
+		}
+
+		header .v-input__slot,
+		.v-expansion-panel,
+		.topic-chip,
+		.embedded-chat {
+			background-color: var(--v-background-base) !important;
 		}
 
 		button:not(.video-card-action) {
 			background-color: transparent !important;
 		}
 
-
-		header .v-input__slot,
-		.v-expansion-panel,
-		.topic-chip {
-			background-color: var(--v-background-base) !important;
+		.v-list-item--link::before,
+		.v-btn::before {
+			background-color: var(--v-background-lighten4)
 		}
 	}
 
 	if hd-borderlessHolodex {
 
-		.sidebar,
-		.watch-live-chat {
-			border-color: black !important;
-		}
-
-		#bottom-bar,
-		.mv-cell,
-		.v-divider {
+		*,
+		.tl-overlay {
 			border-color: transparent !important;
 		}
 
@@ -161,6 +169,10 @@
 
 		.layout-preview-cell {
 			border: none !important;
+		}
+
+		.watch-live-chat {
+			background-color: transparent !important;
 		}
 	}
 
@@ -473,29 +485,46 @@
 		margin-left: 4px !important;
 	}
 
-	if hd-darkmode==darker or hd-darkmode==darknesss {
+	if hd-darkmode==darker {
 
 		yt-live-chat-message-input-renderer,
 		yt-live-chat-header-renderer,
 		yt-live-chat-ticker-renderer,
 		#chat-messages,
-		yt-formatted-string,
-		{
-			background: black !important;
+		yt-formatted-string {
+
+			background: #0f0f0f !important;
 		}
 
-		yt-icon-button,
-		{
+		.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text:hover {
+			background: #202020 !important;
+		}
+
+		yt-icon-button {
 			background: transparent !important;
 		}
 	}
 
 	if hd-darkmode==darknesss {
 
+		yt-live-chat-message-input-renderer,
+		yt-live-chat-header-renderer,
+		yt-live-chat-ticker-renderer,
+		#chat-messages,
+		yt-formatted-string,
 		#input-container,
 		#search-panel,
-		tp-yt-paper-listbox.yt-dropdown-menu {
+		#menu,
+ 		#contentWrapper {
 			background: black !important;
+		}
+
+		.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text:hover {
+			background: #202020 !important;
+		}
+
+		yt-icon-button {
+			background: transparent !important;
 		}
 	}
 
@@ -569,7 +598,14 @@
 
 @-moz-document url-prefix("https://www.youtube.com/embed/hyperchat_embed") {
 
-	if hd-darkmode==darker or hd-darkmode==darknesss {
+	if hd-darkmode==darker {
+		.hyperchat-root,
+		.hyperchat-root > div.w-full > div.flex {
+			background: #0f0f0f !important;
+		}
+	}
+
+	if hd-darkmode==darknesss {
 
 		.hyperchat-root,
 		.hyperchat-root > div.w-full > div.flex {
