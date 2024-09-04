@@ -36,8 +36,8 @@
 	"Custom": 			"hd-avatarCustom"
 	
 }
-@var text 			hd-avatarCustom 		"Choose an custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
-@var range 			hd-avatarSize 			"Adjust the avatar size" [100, 50, 150, 1, "%"]
+@var text			hd-avatarCustom 		"Choose an custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
+@var range			hd-avatarSize 			"Adjust the avatar size" [100, 50, 150, 1, "%"]
 
 @var text Singleview 		"------------------------------------------------------" '---Singleview---'
 
