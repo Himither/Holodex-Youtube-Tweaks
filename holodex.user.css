@@ -66,16 +66,16 @@
 @var checkbox 			      ytc-showDropdownMenu 		    "Show dropdown menu again" 0
 @var checkbox 			      ytc-showButtons 		        "Show hidden buttons (for use on YouTube)" 0
 
-@var text Hyperchat 		"------------------------------------------------------" '---Hyperchat---'
+@var text Hyperchat 		  "------------------------------------------------------" '---Hyperchat---'
 
-@var checkbox 			    hc-hideHyperchatInfo 		      "Hide Hyperchat Notice (Please 👍 and ⭐ Hyperchat)" 0
+@var checkbox 			      hc-hideHyperchatInfo 		      "Hide Hyperchat Notice (Please 👍 and ⭐ Hyperchat)" 0
 
-@var text Scrollbars 		"------------------------------------------------------" '---Scrollbars---'
+@var text Scrollbars 		  "------------------------------------------------------" '---Scrollbars---'
 
-@var checkbox 			    hd-hideScrollbars 		        "Hide Holodex scrollbars" 0
-@var checkbox 			    ytc-hideScrollbars            "Hide YouTube-Chat scrollbars" 0
-@var checkbox 			    hc-hideScrollbars 		        "Hide Hyperchat scrollbars" 0
-@var checkbox 			    all-hideScrollbars 		        "Hide scrollbars everywhere on the internet" 0
+@var checkbox 			      hd-hideScrollbars 		        "Hide Holodex scrollbars" 0
+@var checkbox 			      ytc-hideScrollbars            "Hide YouTube-Chat scrollbars" 0
+@var checkbox 			      hc-hideScrollbars 		        "Hide Hyperchat scrollbars" 0
+@var checkbox 			      all-hideScrollbars 		        "Hide scrollbars everywhere on the internet" 0
 
 ==/UserStyle== */
 @-moz-document url-prefix("https://holodex.net") {
