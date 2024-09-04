@@ -1,81 +1,81 @@
 /* ==UserStyle==
 
-@name           		Holodex & Hyperchat Tweaks
-@namespace      		https://github.com/Himither
-@homepageURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks
-@supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        		1.1.27
-@updateURL	    		https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
-@description    		Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
-@author         		Himither
-@license        		MIT
-@preprocessor   		stylus
+@name           		      Holodex & Hyperchat Tweaks
+@namespace      		      https://github.com/Himither
+@homepageURL			        https://github.com/Himither/Holodex-Hyperchat-Tweaks
+@supportURL			          https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
+@version        		      1.1.27
+@updateURL	    		      https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
+@description    		      Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
+@author         		      Himither
+@license        		      MIT
+@preprocessor   		      stylus
 
 @var text Holodex "------------------------------------------------------" '---Holodex---'
 
-@var select 			hd-darkmode 			"Dark Mode" {
+@var select 			        hd-darkmode 			          "Dark Mode" {
 
-	"Default": 			"normal",
-	"Darker*": 			"darker",
-	"La+ Darknesss": 		"darknesss"
+"Default": 			          "normal",
+"Darker*": 			          "darker",
+"La+ Darknesss": 		      "darknesss"
 	
 }
-@var select 			hd-theme 			"Select a theme" {
+@var select 			        hd-theme 			              "Select a theme" {
 
-	"None*": 			"none",
-	"Aqua": 			"aqutan"
+"None*": 			            "none",
+"Aqua": 			            "aqutan"
 	
 }		
-@var number 			hd-sidemenuWidth 		"Change navigation menu width (170px - 1080px)" [220, 170, 1080, 1, "px"]
-@var checkbox 			hd-borderlessHolodex 		"Borderless Holodex" 1
-@var checkbox 			hd-hoverOverlay 		"Show video overlay only on video hover" 0
-@var select 			hd-changeAvatar 		"Change the avatar image" {
+@var number 			        hd-sidemenuWidth 		        "Change navigation menu width (170px - 1080px)" [220, 170, 1080, 1, "px"]
+@var checkbox 			      hd-borderlessHolodex 		    "Borderless Holodex" 1
+@var checkbox 			      hd-hoverOverlay 		        "Show video overlay only on video hover" 0
+@var select 			        hd-changeAvatar 		        "Change the avatar image" {
 
-	"None": 			"none",
-	"Anchor*": 			"'https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/main/avatar/anchor.webp'",
-	"Custom": 			"hd-avatarCustom"
+"None": 			            "none",
+"Anchor*": 			          "'https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/main/avatar/anchor.webp'",
+"Custom": 			          "hd-avatarCustom"
 	
 }
-@var text			hd-avatarCustom 		"Choose an custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
-@var range			hd-avatarSize 			"Adjust the avatar size" [100, 50, 150, 1, "%"]
+@var text			            hd-avatarCustom 		        "Choose an custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
+@var range			          hd-avatarSize 			        "Adjust the avatar size" [100, 50, 150, 1, "%"]
 
-@var text Singleview 		"------------------------------------------------------" '---Singleview---'
+@var text Singleview 		  "------------------------------------------------------" '---Singleview---'
 
-@var number 			sw-sidebarWidth  		"Adjust the chat/TLdex width (170px - 1080px)" [340, 170, 1080, 1, "px"]
-@var checkbox 			sw-videoHeight 			"Increase video container height to 100%" 0
-@var checkbox			sw-videoRound			"Add rounded corners and a bit of padding to the video" 0
+@var number 			        sw-sidebarWidth  		        "Adjust the chat/TLdex width (170px - 1080px)" [340, 170, 1080, 1, "px"]
+@var checkbox 			      sw-videoHeight 			        "Increase video container height to 100%" 0
+@var checkbox			        sw-videoRound			          "Add rounded corners and a bit of padding to the video" 0
 
-@var text Multidex 		"------------------------------------------------------" '---Multidex---'
+@var text Multidex 		    "------------------------------------------------------" '---Multidex---'
 
-@var checkbox 			md-hoverToolbarButton 		"Show top-right toolbar button only on mouse hover" 0
-@var checkbox 			md-hoverChatButtons 		"Show bottom-right chat buttons only on mouse hover" 0
-@var checkbox 			md-hoverArchiveSync 		"Show Archive Sync only on mouse hover" 0
+@var checkbox 			      md-hoverToolbarButton 	    "Show top-right toolbar button only on mouse hover" 0
+@var checkbox 			      md-hoverChatButtons 		    "Show bottom-right chat buttons only on mouse hover" 0
+@var checkbox 			      md-hoverArchiveSync 		    "Show Archive Sync only on mouse hover" 0
 
-@var text Youtube 		"------------------------------------------------------" '---YouTube---'
+@var text Youtube 		    "------------------------------------------------------" '---YouTube---'
 
-@var number 			yt-menuWidth 			"Change side menu width (170px - 1080px)" [240, 170, 1080, 1, "px"]
-@var checkbox 			yt-darknesss 			"The darkest of all modes - La+ Darknesss" 0
-@var checkbox 			yt-borderlessChat 		"Unleash chat (remove border around chat)" 0
-@var checkbox 			yt-hoverHeader 			"Show header only on hover" 0
-@var checkbox 			yt-useWidth 			"Use full width when watching videos (progess bar is a bit iffy)" 0
-@var checkbox 			yt-hoverSecondary 		"Works only with full width option. When chat AND playlist are closed hide right column when not hovered." 0
+@var number 			        yt-menuWidth 			          "Change side menu width (170px - 1080px)" [240, 170, 1080, 1, "px"]
+@var checkbox 			      yt-darknesss 			          "The darkest of all modes - La+ Darknesss" 0
+@var checkbox 			      yt-borderlessChat 		      "Unleash chat (remove border around chat)" 0
+@var checkbox 			      yt-hoverHeader 			        "Show header only on hover" 0
+@var checkbox 			      yt-useWidth 			          "Use full width when watching videos (progess bar is a bit iffy)" 0
+@var checkbox 			      yt-hoverSecondary 		      "Works only with full width option. When chat AND playlist are closed hide right column when not hovered." 0
 
 @var text YouTubeChat 		"------------------------------------------------------" '---YouTube Chat---'
 
-@var checkbox 			ytc-showLabel 			"Show \"Live chat replay\" as label" 0
-@var checkbox 			ytc-showDropdownMenu 		"Show dropdown menu again" 0
-@var checkbox 			ytc-showButtons 		"Show hidden buttons (for use on YouTube)" 0
+@var checkbox 			      ytc-showLabel 			        "Show \"Live chat replay\" as label" 0
+@var checkbox 			      ytc-showDropdownMenu 		    "Show dropdown menu again" 0
+@var checkbox 			      ytc-showButtons 		        "Show hidden buttons (for use on YouTube)" 0
 
 @var text Hyperchat 		"------------------------------------------------------" '---Hyperchat---'
 
-@var checkbox 			hc-hideHyperchatInfo 		"Hide Hyperchat Notice (Please 👍 and ⭐ Hyperchat)" 0
+@var checkbox 			    hc-hideHyperchatInfo 		      "Hide Hyperchat Notice (Please 👍 and ⭐ Hyperchat)" 0
 
 @var text Scrollbars 		"------------------------------------------------------" '---Scrollbars---'
 
-@var checkbox 			hd-hideScrollbars 		"Hide Holodex scrollbars" 0
-@var checkbox 			ytc-hideScrollbars 		"Hide YouTube-Chat scrollbars" 0
-@var checkbox 			hc-hideScrollbars 		"Hide Hyperchat scrollbars" 0
-@var checkbox 			all-hideScrollbars 		"Hide scrollbars everywhere on the internet" 0
+@var checkbox 			    hd-hideScrollbars 		        "Hide Holodex scrollbars" 0
+@var checkbox 			    ytc-hideScrollbars            "Hide YouTube-Chat scrollbars" 0
+@var checkbox 			    hc-hideScrollbars 		        "Hide Hyperchat scrollbars" 0
+@var checkbox 			    all-hideScrollbars 		        "Hide scrollbars everywhere on the internet" 0
 
 ==/UserStyle== */
 @-moz-document url-prefix("https://holodex.net") {
