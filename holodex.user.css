@@ -4,7 +4,7 @@
 @namespace      		https://github.com/Himither
 @homepageURL				https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL					https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version        		1.1.25
+@version        		1.1.26
 @updateURL	    		https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description    		Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author         		Himither
@@ -96,10 +96,6 @@
 			background-color: var(--v-background-darken4) !important;
 		}
 
-		.watch-layout {
-			background-color: #0f0f0f !important;
-		}
-
 		nav .v-list.v-sheet,
 		.v-navigation-drawer__content,
 		.v-tabs-bar,
@@ -107,12 +103,16 @@
 		.v-expansion-panel,
 		.topic-chip,
 		.v-bottom-navigation,
-		.theme--dark.v-card,
 		.theme--dark.v-list,
 		.settings-group,
 		.mv-toolbar,
 		.mv-cell {
 			background-color: var(--v-background-base) !important;
+		}
+		
+		.watch-layout,
+ 		div.tl-overlay {
+			background-color: #0f0f0f !important;
 		}
 
 		.settings-group {
@@ -122,6 +122,7 @@
 
 	if hd-darkmode==darknesss {
 
+		iframe,
 		.v-main,
 		.v-sheet,
 		.watch-layout,
@@ -240,7 +241,7 @@
 	}
 
 	if sw-videoRound {
-		.v-main__wrap > div > div > div > div[style] {
+		.v-main__wrap > div > div > div.flex-column > div[style] {
 			padding: 0 16px !important;
 		}
 	}
@@ -487,6 +488,12 @@
 		video {
 			border-radius: 8px !important;
 		}
+		
+		.ytp-cued-thumbnail-overlay-image {
+			background-size: contain !important;
+			-moz-background-size: contain !important;
+  		-webkit-background-size: contain !important;
+		}
 	}
 }
 
@@ -501,18 +508,13 @@
 		yt-live-chat-message-input-renderer,
 		yt-live-chat-header-renderer,
 		yt-live-chat-ticker-renderer,
-		#chat-messages,
-		yt-formatted-string {
+		#chat-messages {
 
 			background: #0f0f0f !important;
 		}
 
 		.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text:hover {
 			background: #202020 !important;
-		}
-
-		yt-icon-button {
-			background: transparent !important;
 		}
 	}
 
@@ -521,8 +523,8 @@
 		yt-live-chat-message-input-renderer,
 		yt-live-chat-header-renderer,
 		yt-live-chat-ticker-renderer,
+		ytd-menu-popup-renderer,
 		#chat-messages,
-		yt-formatted-string,
 		#input-container,
 		#search-panel,
 		#menu,
@@ -532,10 +534,6 @@
 
 		.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text:hover {
 			background: #202020 !important;
-		}
-
-		yt-icon-button {
-			background: transparent !important;
 		}
 	}
 
