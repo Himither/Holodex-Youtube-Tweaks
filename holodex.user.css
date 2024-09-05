@@ -4,7 +4,7 @@
 @namespace			https://github.com/Himither
 @homepageURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version			1.1.27
+@version			1.1.28
 @updateURL			https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description			Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author				Himither
@@ -90,12 +90,6 @@
 
 	if hd-darkmode==darker {
 
-		.multiview,
-		.vue-grid-layout,
-		{
-			background-color: var(--v-background-darken4) !important;
-		}
-
 		nav .v-list.v-sheet,
 		.v-navigation-drawer__content,
 		.v-tabs-bar,
@@ -111,7 +105,11 @@
 		}
 
 		.watch-layout,
-		div.tl-overlay {
+		div.tl-overlay,
+		.theme--dark.v-card,
+		.multiview,
+		.vue-grid-layout,
+		.theme--dark.v-sheet {
 			background-color: #0f0f0f !important;
 		}
 
