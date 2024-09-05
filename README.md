@@ -1,51 +1,51 @@
 # Holodex & Hyperchat Tweaks
 
 ## Description
+
 Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons and many more tweaks.
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css)
 
 ## Preview
+
 ### Singleview
-<div style="display: flex;">
-  <div style="flex: 50%; margin-right: 10px;">
-    <img src="preview/singleviewDarker.png" style="width: 100%;" />
-  </div>
-  <div style="flex: 50%; margin-left: 10px;">
-    <img src="preview/singleviewDarknesss.png" style="width: 100%;" />
-  </div>
-</div>
+
+<p align="center">
+  <img alt="Light" src="preview/singleviewDarker.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Dark" src="preview/singleviewDarknesss.png" width="45%">
+</p>
 
 ### Channeru
-<div style="display: flex;">
-  <div style="flex: 50%; margin-right: 10px;">
-    <img src="preview/channeruDarker.png" style="width: 100%;" />
-  </div>
-  <div style="flex: 50%; margin-left: 10px;">
-    <img src="preview/channeruDarknesss.png" style="width: 100%;" />
-  </div>
-</div>
+
+<p align="center">
+  <img alt="Light" src="preview/settaiDarker.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Dark" src="preview/settaiDarknesss.png" width="45%">
+</p>
 
 ### Settai
-<div style="display: flex;">
-  <div style="flex: 50%; margin-right: 10px;">
-    <img src="preview/settaiDarker.png" style="width: 100%;" />
-  </div>
-  <div style="flex: 50%; margin-left: 10px;">
-    <img src="preview/settaiDarknesss.png" style="width: 100%;" />
-  </div>
-</div>
+
+<p align="center">
+  <img alt="Light" src="preview/singleviewDarker.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Dark" src="preview/singleviewDarknesss.png" width="45%">
+</p>
 
 ## Details
+
 ### Notice
+
 Rarely, **when Hyperchat has an update waiting for you to accept**, the styling will temporarily not affect it until you **confirm the update**.
 
 ### [Holodex](https://holodex.net/)
+
 **Turn on Holodex own dark mode** for the the two extended dark modes to display properly.
 
 Unless you're using fullscreen mode anyway I would recommend Firefox over Chrome, because there's no ugly border on the top. Of course you need to install a nice pure black theme to make it fit.
 
 ### [Hyperchat](https://livetl.app/hyperchat)
+
 If you want to **always see Live Chat** activate the hyperchat setting:
 
 *HyperChat Settings -> Additional Options -> "Automatically switch to Live Chat"*
@@ -53,6 +53,7 @@ If you want to **always see Live Chat** activate the hyperchat setting:
 Alternatively you could set the dropdown menu to show again and **increase the chat width** enough for it to display properly
 
 ### Custom Avatar
+
 You can simply insert a link or [convert a Image to Base64](https://codebeautify.org/image-to-base64-converter) and use it in a [Data URL](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). 
 
 **In both cases you must _wrap your input in single quotes_.** 
