@@ -19,17 +19,17 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 ### Channeru
 
 <p align="center">
-  <img alt="Light" src="preview/settaiDarker.png" width="45%">
+  <img alt="Light" src="preview/channeruDarker.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="preview/settaiDarknesss.png" width="45%">
+  <img alt="Dark" src="preview/channeruDarknesss.png" width="45%">
 </p>
 
 ### Settai
 
 <p align="center">
-  <img alt="Light" src="preview/singleviewDarker.png" width="45%">
+  <img alt="Light" src="preview/settaiDarker.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="preview/singleviewDarknesss.png" width="45%">
+  <img alt="Dark" src="preview/settaiDarknesss.png" width="45%">
 </p>
 
 ## Details
