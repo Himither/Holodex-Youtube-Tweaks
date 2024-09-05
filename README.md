@@ -6,7 +6,35 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css)
 
 ## Preview
-![Main preview image](/preview/1.png)
+### Singleview
+<div style="display: flex;">
+  <div style="flex: 50%; margin-right: 10px;">
+    <img src="preview/singleviewDarker.png" style="width: 100%;" />
+  </div>
+  <div style="flex: 50%; margin-left: 10px;">
+    <img src="preview/singleviewDarknesss.png" style="width: 100%;" />
+  </div>
+</div>
+
+### Channeru
+<div style="display: flex;">
+  <div style="flex: 50%; margin-right: 10px;">
+    <img src="preview/channeruDarker.png" style="width: 100%;" />
+  </div>
+  <div style="flex: 50%; margin-left: 10px;">
+    <img src="preview/channeruDarknesss.png" style="width: 100%;" />
+  </div>
+</div>
+
+### Settai
+<div style="display: flex;">
+  <div style="flex: 50%; margin-right: 10px;">
+    <img src="preview/settaiDarker.png" style="width: 100%;" />
+  </div>
+  <div style="flex: 50%; margin-left: 10px;">
+    <img src="preview/settaiDarknesss.png" style="width: 100%;" />
+  </div>
+</div>
 
 ## Details
 ### Notice
