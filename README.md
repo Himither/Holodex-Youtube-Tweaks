@@ -35,8 +35,8 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 ## Details
 
 ### Notice
-
-Rarely, **when Hyperchat has an update waiting for you to accept**, the styling will temporarily not affect it until you **confirm the update**.
+> ![WARNING]
+> Rarely, **when Hyperchat has an update waiting for you to accept**, the styling will temporarily not affect it until you **confirm the update**.
 
 ### [Holodex](https://holodex.net/)
 
