@@ -34,8 +34,7 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 
 ## Details
 
-### Notice
-> ![WARNING]
+> [!WARNING]
 > Rarely, **when Hyperchat has an update waiting for you to accept**, the styling will temporarily not affect it until you **confirm the update**.
 
 ### [Holodex](https://holodex.net/)
@@ -46,9 +45,9 @@ Unless you're using fullscreen mode anyway I would recommend Firefox over Chrome
 
 ### [Hyperchat](https://livetl.app/hyperchat)
 
-If you want to **always see Live Chat** activate the hyperchat setting:
-
-*HyperChat Settings -> Additional Options -> "Automatically switch to Live Chat"*
+> [!TIP]
+> If you want to **always see Live Chat** activate the hyperchat setting:
+> *HyperChat Settings -> Additional Options -> "Automatically switch to Live Chat"*
 
 Alternatively you could set the dropdown menu to show again and **increase the chat width** enough for it to display properly
 
@@ -56,13 +55,17 @@ Alternatively you could set the dropdown menu to show again and **increase the c
 
 You can simply insert a link or [convert a Image to Base64](https://codebeautify.org/image-to-base64-converter) and use it in a [Data URL](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). 
 
-**In both cases you must _wrap your input in single quotes_.** 
+> [!IMPORTANT]
+> **In both cases you must _wrap your input in single quotes_.** 
 
-> Link: ```'https://example.link'```
+Link: ```'https://example.link'```
 
-> Data URL : ```'data:image/webp;base64,<Base64 String>'``` (for a converted .webp)
+Data URL : ```'data:image/webp;base64,<Base64 String>'``` (for a converted .webp, **without** the <> surrounding it)
 
-In my experience it seems to be fine to omit the MIME type in this particular use-case. So ```'data:;base64,<Base64 String>'``` does also suffice.
+> [!TIP]
+> In my experience it seems to be fine to omit the MIME type (e.g. **image/webp**) in this particular use-case.
+> 
+> So ```'data:;base64,<Base64 String>'``` does also suffice.
 
 **Full example**:
 
