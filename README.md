@@ -11,25 +11,25 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 ### Singleview
 
 <p align="center">
-  <img alt="Singleview - Darker" src="preview/singleviewDarker.png" width="45%">
+  <img alt="Singleview - Darker" src="preview/singleviewDarker.webp" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Singleview - La+ Darknesss" src="preview/singleviewDarknesss.png" width="45%">
+  <img alt="Singleview - La+ Darknesss" src="preview/singleviewDarknesss.webp" width="45%">
 </p>
 
 ### Channeru
 
 <p align="center">
-  <img alt="Channeru - Darker" src="preview/channeruDarker.png" width="45%">
+  <img alt="Channeru - Darker" src="preview/channeruDarker.webp" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Channeru - La+ Darknesss" src="preview/channeruDarknesss.png" width="45%">
+  <img alt="Channeru - La+ Darknesss" src="preview/channeruDarknesss.webp" width="45%">
 </p>
 
 ### Settai
 
 <p align="center">
-  <img alt="Settai - Darker" src="preview/settaiDarker.png" width="45%">
+  <img alt="Settai - Darker" src="preview/settaiDarker.webp" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Settai - La+ Darknesss" src="preview/settaiDarknesss.png" width="45%">
+  <img alt="Settai - La+ Darknesss" src="preview/settaiDarknesss.webp" width="45%">
 </p>
 
 ## Details
