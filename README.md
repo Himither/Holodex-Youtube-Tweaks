@@ -1,4 +1,4 @@
-# Holodex & Hyperchat Tweaks
+<h1 align="center"> <img width="32px" src="avatar/anchor.webp" /> Holodex & Hyperchat Tweaks <img width="32px" src="avatar/anchor.webp" /> </h1>
 
 ## Description
 
