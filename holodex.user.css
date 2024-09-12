@@ -4,14 +4,14 @@
 @namespace			https://github.com/Himither
 @homepageURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version			1.1.32
+@version			1.1.33
 @updateURL			https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css
 @description			Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author				Himither
 @license			MIT
 @preprocessor			stylus
 
-@var text Holodex		"🢂【Holodex】" '_'
+@var text Holodex		"━━━━━━⮞【Holodex】" '_'
 
 @var select			hd-darkmode			"Dark Mode" {
 
@@ -39,38 +39,39 @@
 @var text			hd-avatarCustom			"Custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
 @var range			hd-avatarSize			"Avatar size" [100, 50, 150, 1, "%"]
 
-@var text Singleview		"🢂【Singleview】" '_'
+@var text Singleview		"━━━━━━⮞【Singleview】" '_'
 
 @var number			sw-sidebarWidth			"Chat width (170px - 1080px)" [340, 170, 1080, 1, "px"]
 @var checkbox			sw-videoHeight			"Set video height to 100%" 0
 @var checkbox			sw-videoRound			"Rounded & padded video" 0
 
-@var text Multidex		"🢂【Multidex】" '_'
+@var text Multidex		"━━━━━━⮞【Multidex】" '_'
 
 @var checkbox			md-hoverToolbarButton		"Show top-right toolbar button only on mouse hover" 0
 @var checkbox			md-hoverChatButtons		"Show bottom-right chat buttons only on mouse hover" 0
 @var checkbox			md-hoverArchiveSync		"Show Archive Sync only on mouse hover" 0
 
-@var text Youtube		"🢂【YouTube】" '_-'
+@var text Youtube		"━━━━━━⮞【YouTube】" '_'
 
 @var number			yt-menuWidth			"Change side menu width (170px - 1080px)" [240, 170, 1080, 1, "px"]
 @var checkbox			yt-darknesss			"La+ Darknesss" 0
 @var checkbox			yt-borderlessChat		"Remove border around chat" 0
 @var checkbox			yt-hoverHeader			"Show header only on hover" 0
+@var checkbox			yt-buttons			"Remove text from buttons below video" 0
 @var checkbox			yt-useWidth			"Use full width when watching videos (progess bar is a bit iffy)" 0
 @var checkbox			yt-hoverSecondary		"Works only with full width option. When chat AND playlist are closed hide right column when not hovered." 0
 
-@var text YouTubeChat		"🢂【YT Chat】" '_'
+@var text YouTubeChat		"━━━━━━⮞【YT Chat】" '_'
 
 @var checkbox			ytc-showLabel			"Show \"Live chat replay\" as label" 0
 @var checkbox			ytc-showDropdownMenu		"Show dropdown menu again" 0
 @var checkbox			ytc-showButtons			"Show hidden buttons again" 0
 
-@var text Hyperchat		"🢂【Hyperchat】" '_'
+@var text Hyperchat		"━━━━━━⮞【Hyperchat】" '_'
 
 @var checkbox			hc-hideHyperchatInfo		"Hide Hyperchat Notice (Please 👍 and ⭐ Hyperchat)" 0
 
-@var text Scrollbars		"🢂【Scrollbars】" '_'
+@var text Scrollbars		"━━━━━━⮞【Scrollbars】" '_'
 
 @var checkbox			hd-hideScrollbars		"Hide Holodex scrollbars" 0
 @var checkbox			ytc-hideScrollbars		"Hide YouTube-Chat scrollbars" 0
@@ -334,6 +335,39 @@ url-prefix("https://www.youtube.com/live") {
 			background-color: var(--yt-spec-base-background) !important;
 		}
 	}
+
+	if yt-buttons {
+		#flexible-item-buttons {
+			display: flex;
+		}
+
+		#top-level-buttons-computed,
+		#flexible-item-buttons {
+			column-gap: 8px;
+		}
+
+		#actions.ytd-watch-metadata .yt-spec-button-view-model,
+		yt-button-shape,
+		#flexible-item-buttons,
+		#top-level-buttons-computed,
+		ytd-video-owner-renderer {
+			width: fit-content;
+		}
+
+		#owner.ytd-watch-metadata {
+			min-width: fit-content;
+		}
+
+		:is(#owner, yt-button-view-model, #flexible-item-buttons) .yt-spec-button-shape-next__button-text-content {
+			display: none;
+		}
+
+		:is(#owner, yt-button-view-model, #flexible-item-buttons) .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon {
+			margin: 0;
+		}
+	}
+
+
 
 	if yt-useWidth {
 
