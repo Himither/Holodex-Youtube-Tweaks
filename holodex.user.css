@@ -4,7 +4,7 @@
 @namespace			https://github.com/Himither
 @homepageURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Hyperchat-Tweaks/issues
-@version			1.1.35
+@version			1.1.36
 @updateURL			https://raw.githubusercontent.com/Himither/Holodex-Youtube-Tweaks/master/holodex.user.css
 @description			Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author				Himither
@@ -76,7 +76,7 @@
 @var checkbox			hd-hideScrollbars		"Hide Holodex scrollbars" 0
 @var checkbox			ytc-hideScrollbars		"Hide YouTube-Chat scrollbars" 0
 @var checkbox			hc-hideScrollbars		"Hide Hyperchat scrollbars" 0
-@var checkbox			all-hideScrollbars		"Hide scrollbars on the internet" 0
+@var checkbox			yt-hideScrollbars		"Hide YouTube scrollbars" 0
 
 ==/UserStyle== */
 @-moz-document url-prefix("https://holodex.net") {
@@ -308,6 +308,12 @@
 	}
 }
 
+if yt-hideScrollbars {
+	* {
+		scrollbar-width: none !important;
+	}
+}
+
 @-moz-document url-prefix("https://www.youtube.com/watch"),
 url-prefix("https://www.youtube.com/live") {
 
@@ -347,11 +353,11 @@ url-prefix("https://www.youtube.com/live") {
 			width: fit-content !important; /* Must be !important */
 		}
 
-		:is(#yt-button-view-model, #flexible-item-buttons, ytd-subscribe-button-renderer[subscribed]) .yt-spec-button-shape-next__button-text-content {
+		:is(yt-button-view-model, #flexible-item-buttons, ytd-subscribe-button-renderer[subscribed]) .yt-spec-button-shape-next__button-text-content {
 			display: none;
 		}
 
-		:is(#yt-button-view-model, #flexible-item-buttons) .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon {
+		:is(yt-button-view-model, #flexible-item-buttons) .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon {
 			margin: 0;
 		}
 	}
@@ -661,7 +667,7 @@ url-prefix("https://www.youtube.com/live") {
 		}
 	}
 
-	if hc-hideScrollbars or all-hideScrollbars {
+	if hc-hideScrollbars {
 
 		div.hyperchat-root div.w-full {
 			padding-bottom: 4px !important;
@@ -687,15 +693,6 @@ url-prefix("https://www.youtube.com/live") {
 
 		div.content > div > div > div > a > span.text-member-light {
 			color: rgb(240, 98, 146) !important;
-		}
-	}
-}
-
-@-moz-document url-prefix("https://") {
-	if all-hideScrollbars {
-
-		* {
-			scrollbar-width: none !important;
 		}
 	}
 }
