@@ -1,10 +1,10 @@
-<h1 align="center"> <img width="32px" src="avatar/anchor.webp" /> Holodex & Hyperchat Tweaks <img width="32px" src="avatar/anchor.webp" /> </h1>
+<h1 align="center"> <img width="32px" src="avatar/anchor.webp" /> Holodex & YouTube Tweaks <img width="32px" src="avatar/anchor.webp" /> </h1>
 
 ## Description
 
 Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons and many more tweaks.
 
-[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Himither/Holodex-Hyperchat-Tweaks/master/holodex.user.css)
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Himither/Holodex-Youtube-Tweaks/master/holodex.user.css)
 
 ## Preview
 
