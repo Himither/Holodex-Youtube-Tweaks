@@ -1,81 +1,81 @@
 /* ==UserStyle==
 
-@name								Holodex & Youtube Tweaks
-@namespace					https://github.com/Himither
-@homepageURL				https://github.com/Himither/Holodex-Youtube-Tweaks
-@supportURL					https://github.com/Himither/Holodex-Youtube-Tweaks/issues
-@version						1.1.39
-@description				Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
-@author							Himither
-@license						MIT
-@preprocessor				stylus
+@name				Holodex & Youtube Tweaks
+@namespace			https://github.com/Himither
+@homepageURL			https://github.com/Himither/Holodex-Youtube-Tweaks
+@supportURL			https://github.com/Himither/Holodex-Youtube-Tweaks/issues
+@version			1.1.40
+@description			Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
+@author				Himither
+@license			MIT
+@preprocessor			stylus
 
 @var text Holodex		"━━━━━━⮞【Holodex】" '_'
 
-@var select					hd-darkmode								"Dark Mode" {
+@var select			hd-darkmode						"Dark Mode" {
 
-"Default":					"normal",
-"Darker*":					"darker",
+"Default":			"normal",
+"Darker*":			"darker",
 "La+ Darknesss":		"darknesss"
 
 }
-@var select					hd-theme									"Select a theme" {
+@var select			hd-theme						"Select a theme" {
 
-"None*":						"none",
-"Aqua":							"aqutan"
-
-}
-@var number					hd-sidemenuWidth					"Menu width (170px - 1080px)" [220, 170, 1080, 1, "px"]
-@var checkbox				hd-borderlessHolodex			"Borderless Holodex" 1
-@var checkbox				hd-hoverOverlay						"YT Overlay only on video hover" 0
-@var select					hd-changeAvatar						"Change the avatar image" {
-
-"None":							"none",
-"Anchor*":					"'data:image/webp;base64,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'",
-"Custom":					"hd-avatarCustom"
+"None*":			"none",
+"Aqua":				"aqutan"
 
 }
-@var text					hd-avatarCustom							"Custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
-@var range				hd-avatarSize								"Avatar size" [100, 50, 150, 1, "%"]
+@var number			hd-sidemenuWidth					"Menu width (170px - 1080px)" [220, 170, 1080, 1, "px"]
+@var checkbox			hd-borderlessHolodex					"Borderless Holodex" 1
+@var checkbox			hd-hoverOverlay						"YT Overlay only on video hover" 0
+@var select			hd-changeAvatar						"Change the avatar image" {
+
+"None":				"none",
+"Anchor*":			"'data:image/webp;base64,UklGRi4JAABXRUJQVlA4WAoAAAAQAAAAPwAAPwAAQUxQSC4EAAABkL9t2/G2G7prczY7M5lto+5s27Zt27Zt215tN1ic54fv/ZAvi4gJwH/dq2Lz8NCmQZ72UmDYjQSVwaCKu9zHzy6a3jYTr+Gi0g46x5Dg7y1l1+AvifxaQ2YBN0j0KW959TGwNH/+aln/gmXlcYm41psdS5bq+oBBh53lVCGecasYAJR5xvheQk6t1BxNZzB76jk59eUUYeT8Kc2qnMLRtJdTuIETU5ZVPY3RVk7NVRx9FGu4iZNVR07lojn0ohKn5mfifioiJ9eTDHozqLZixCdi7nSUE4K1DDJlZpmJmdsasvY6xRK601VGjgCqfRDzrCwAR5l0OdQNQMO3wl4oAUQebCOL0GRKjgBQ8aCKL3dnWQB9Mym6owxCk4koOQKAS9uHrMvNnQD0zSSi6I42C0kibtKyqdOmTrzJsJ6aOHXa1FUZxI3uYKOQJLJ5dAdxDq3GVeQJTiIZRnfgqTquLiPwGf2cmI9T6jvJ8nUhTtGZf+m6F0eZQWS+09EZKPRIHlf9AdfgZ1aihEqcfmYiopx1JQHlazncDwLKbVcRERlCOGuJ/aqLIxSveawWi8ViZVm4Vp77QXCJ+EjseQA8rvJQ9qJAKF4zXgzq1bt3z3MM656evXv3GvmVcT8IhdeoiPeEC1D0Gx9ZL1WD4g0RvawO7iLWMHCbfiOi++VR7zYJfBUIKDIEEH3pDOVreqcEcwlrJANNv9L98oj4S0ITKgJddIIobYRT1Uk1IA2UE8s4T8omwapmwAgSqZ3nCX5RgM8aHQk39wYWiiHj5gDpCuyxkNiJcNgqimhEubJuUriWCZpG4lfC5bAYU/Ltvq+iz41T+ACLWSMA71qjT/15O/pBqlnMdgevG4K0Lzb2qupZL5uI0u9Mq7qSNabipFtpViJ1C68a/ba90Qk66Oz7SFBMLQDoqCNmwl+G5W0sMQ3dAKBRiqDzHiKsczid9Szxhu4AHFaR4JveIiheAaCLQbJgAM3ShN33YahvqFh01h/oJl0IUOA2sbNu64jotrfvY6JfA/Kf5zEvcEJX6YLhvt7KcyBweCzRZU/PK6bT1YE22SxSj0ULtVS6DpiqJ3ZyfaDORfMhVyjD/AA4b+ShvNHVEqRKbTRdQ7xLHQEERlQHf9n3PKTe8pmj0wvR/eP8OqQj3qdFIT40l4fM/9Kubx4/M0lIyvyxm65lGCzEm9oGEjrNMfIQZW0MKn2LBN8vX31HDvHrxjlIAY+1Zj6iX69J5MdYEmha6gZpfbaYBdjUtNoTUvusNcpBt9QT0nvMzLJd2hg32NKxyytbPW4NW5danW6L5MVFYHunZqe0UqkP13OALD3Dn1ikMN8PdodsC06PFvd7cn7Iuvp+rTDVrsqQu0fUKyHPg91ghyVWZLBSFxaFfTq2vm4mMl5u7gC7DZgSHzvOF3Zdqzr+91ZQOCDaBAAAUBYAnQEqQABAAD6FNpRHpSMiITP5nVCgEIlsAMQbULMPw/mMVl/CbBwX2FZtx/MB5ymmY7z3gAHWx/WPCPwre9z/KIFAr1peUOJDSpzPfH1qD/rf6WnrK/b1wEsG6bwY1le70ri5fpGuz0oISAFIryvO1qJYdwXhe8iQ/ZGB5b5PMR7P3b+J+39gUZuiPVw4v9r2cIe4IY6SaaPWtXrUMDccTavqu5HnPcJ5KEz6OmQA9Paq6Mg57v4oAAD+/gbVmrVKtAxUl5mxK74my/tQj/YraFw0nF4FTz0amm84N8Y98+zzQXPxtU7Jx1/BzvNYiKQK3EuIwalbiDKsgX2RbWoTSm6Azy0KgRIMVi88HI9CQRwkt/Ie/ykB6cjiOuc3Dfpe24mjuIsgymSx3biirELt4kqYVS/PVWazXRT6bz6cuX/nPg/fV+3oADlLFj4drPKi+EwrE30GpA2p/Jkrq0ZYgOSPTmp7/vawxLvEBPW6ulHuP/qLnwu+a+krj+TG4iHKpqYEgy8aWPEwbZ88//bLMrMkcOluX9oQlZ1a2T8TmpZryJvOCLYHY01nRF6XxY9SS/62CBBfHYH+YAB/tluowEobFBFYE8GAM2R00aR0fiNcgNRcdwwBufLPvMGyaNEMe6YrQdL5Wlc7pSvi3ONThW2S0Pp/0flyotL5IdP3Db/buQlcRJeRwhUdb2C2M243Gqgf1op/iYdGpIrCH8vogv4Wcqd5RXtKT4o1OydVB5pBsr/H40DsNAFaHjaYjMya615QVGm6tr5PsC6BOPeYolfg0yuRCebZ+gnGGZffP3D256doD4KobIBYbblr4u5PQU1a7W+FMUAZAjGWi4Je+jtk5enG2QtwtBVC9OX/efkmuswCV77XSvD0Kfyv9yCNlD9/rQu1m6FGxHt+rk0VlAtPku0Ybr+MZHqpX+eu49q79B4qVyB8m5vXQ5u9qQ9bO9xuHl3iL4sikW433+xsXOVcbozqSt6rjfHEPcUwvoA/EoUay/hdu39dgf9aHaVnNMZkz2U839rsU3LnIBxhuixgotgowhsqWnx/PXzAXQdQJoW+R4yhiN+IhThcLP+YTEUJywwx1YcIiaJhd3L5zjpxESu+HCLZTPfL/jNgQaXAn48/KBitIgRS3JdafcgdumlmwjnqUxxxNnQ1Qa/UkOZ40KAyeJaAs2KKYc+3JqvaVlcG2OYzixTleQ11LC3GEq4hZM9bjMcLwZ6hcuWJ5IHV/+v5ATBz4d6fxXbBVRZsD5tl3YGAE4/UVQXUVJjeQgKjn88a4fKtiPoSJ41SHcR0gvIdfazeI7wbxDRP6zs5OP1B6sAb9c02zdbYZUqJMugUYIlQNC0eOqb0dZDtwg1hxNMNKx7XNx73UMFbKs3Iufsj5jhWOCCQAPLVnhKQfN1zmiIrhFP7p9IvQOdY5WJyWjqH9GRmqueMGcido0fqzn2403jwfYGBa1Iw5pFls46WqCeXvTpKKqKbirStSnk1wqSGdhtvVcem/eBGtXuFnIOm5yJCqFi7nzqDXRAEfDMV0AJXA2kPHtgy/wRApqgRmMTds+Cq5zWCwfGUe0wpKxKW85GpA+vR74uHpAaSzp8NgCcRLLpBPOLccG2ZTNLE43Tl2TMAlgg7oiyaQsSF6hU2AAAA'",
+"Custom":			"hd-avatarCustom"
+
+}
+@var text			hd-avatarCustom						"Custom avatar (Link to an image/Data URL wrapped in single quotes)" "''"
+@var range			hd-avatarSize						"Avatar size" [100, 50, 150, 1, "%"]
 
 @var text Singleview		"━━━━━━⮞【Singleview】" '_'
 
-@var number				sw-sidebarWidth							"Chat width (170px - 1080px)" [340, 170, 1080, 1, "px"]
-@var checkbox			sw-videoHeight							"Set video height to 100%" 0
-@var checkbox			sw-videoRound								"Rounded & padded video" 0
+@var number			sw-sidebarWidth						"Chat width (170px - 1080px)" [340, 170, 1080, 1, "px"]
+@var checkbox			sw-videoHeight						"Set video height to 100%" 0
+@var checkbox			sw-videoRound						"Rounded & padded video" 0
 
 @var text Multidex		"━━━━━━⮞【Multidex】" '_'
 
-@var checkbox			md-hoverToolbarButton				"Show top-right toolbar button only on mouse hover" 0
+@var checkbox			md-hoverToolbarButton					"Show top-right toolbar button only on mouse hover" 0
 @var checkbox			md-hoverChatButtons					"Show bottom-right chat buttons only on mouse hover" 0
 @var checkbox			md-hoverArchiveSync					"Show Archive Sync only on mouse hover" 0
 
 @var text Youtube		"━━━━━━⮞【YouTube】" '_'
 
-@var number				yt-menuWidth								"Change side menu width (170px - 1080px)" [240, 170, 1080, 1, "px"]
-@var checkbox			yt-darknesss								"La+ Darknesss" 0
-@var checkbox			yt-borderlessChat						"Remove border around chat" 0
-@var checkbox			yt-hoverHeader							"Show header only on hover" 0
-@var checkbox			yt-buttons									"Remove text from buttons below video" 0
-@var checkbox			yt-useWidth									"Use full width when watching videos (progess bar is a bit iffy)" 0
-@var checkbox			yt-hoverSecondary						"Works only with full width option. When chat AND playlist are closed hide right column when not hovered." 0
+@var number			yt-menuWidth						"Change side menu width (170px - 1080px)" [240, 170, 1080, 1, "px"]
+@var checkbox			yt-darknesss						"La+ Darknesss" 0
+@var checkbox			yt-borderlessChat					"Remove border around chat" 0
+@var checkbox			yt-hoverHeader						"Show header only on hover" 0
+@var checkbox			yt-buttons						"Remove text from buttons below video" 0
+@var checkbox			yt-useWidth						"Use full width when watching videos (progess bar is a bit iffy)" 0
+@var checkbox			yt-hoverSecondary					"Works only with full width option. When chat AND playlist are closed hide right column when not hovered." 0
 
 @var text YouTubeChat		"━━━━━━⮞【YT Chat】" '_'
 
-@var checkbox			ytc-showLabel								"Show \"Live chat replay\" as label" 0
-@var checkbox			ytc-showDropdownMenu				"Show dropdown menu again" 0
-@var checkbox			ytc-showButtons							"Show hidden buttons again" 0
+@var checkbox			ytc-showLabel						"Show \"Live chat replay\" as label" 0
+@var checkbox			ytc-showDropdownMenu					"Show dropdown menu again" 0
+@var checkbox			ytc-showButtons						"Show hidden buttons again" 0
 
 @var text Hyperchat		"━━━━━━⮞【Hyperchat】" '_'
 
-@var checkbox			hc-hideHyperchatInfo				"Hide Hyperchat Notice (Please 👍 and ⭐ Hyperchat)" 0
+@var checkbox			hc-hideHyperchatInfo					"Hide Hyperchat Notice (Please 👍 and ⭐ Hyperchat)" 0
 
 @var text Scrollbars		"━━━━━━⮞【Scrollbars】" '_'
 
-@var checkbox			hd-hideScrollbars						"Hide Holodex scrollbars" 0
+@var checkbox			hd-hideScrollbars					"Hide Holodex scrollbars" 0
 @var checkbox			ytc-hideScrollbars					"Hide YouTube-Chat scrollbars" 0
-@var checkbox			hc-hideScrollbars						"Hide Hyperchat scrollbars" 0
-@var checkbox			yt-hideScrollbars						"Hide YouTube scrollbars" 0
+@var checkbox			hc-hideScrollbars					"Hide Hyperchat scrollbars" 0
+@var checkbox			yt-hideScrollbars					"Hide YouTube scrollbars" 0
 
 ==/UserStyle== */
 @-moz-document url-prefix("https://holodex.net") {
