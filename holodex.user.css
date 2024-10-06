@@ -4,7 +4,7 @@
 @namespace			https://github.com/Himither
 @homepageURL			https://github.com/Himither/Holodex-Youtube-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Youtube-Tweaks/issues
-@version			1.1.40
+@version			1.1.41
 @description			Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author				Himither
 @license			MIT
@@ -47,7 +47,7 @@
 @var text Multidex		"━━━━━━⮞【Multidex】" '_'
 
 @var checkbox			md-hoverToolbarButton					"Show top-right toolbar button only on mouse hover" 0
-@var checkbox			md-hoverChatButtons					"Show bottom-right chat buttons only on mouse hover" 0
+@var checkbox			md-hoverChatButtons					"Show bottom chat buttons only on mouse hover" 0
 @var checkbox			md-hoverArchiveSync					"Show Archive Sync only on mouse hover" 0
 
 @var text Youtube		"━━━━━━⮞【YouTube】" '_'
@@ -165,7 +165,8 @@
 	if hd-borderlessHolodex {
 
 		*,
-		.tl-overlay {
+		.tl-overlay,
+		.mv-cell {
 			border-color: transparent !important;
 		}
 
