@@ -4,8 +4,7 @@
 @namespace			https://github.com/Himither
 @homepageURL			https://github.com/Himither/Holodex-Youtube-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Youtube-Tweaks/issues
-@version			1.1.37
-@updateURL			https://raw.githubusercontent.com/Himither/Holodex-Youtube-Tweaks/master/holodex.user.css
+@version			1.1.38
 @description			Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author				Himither
 @license			MIT
@@ -306,11 +305,11 @@
 	#guide-renderer {
 		width: yt-menuWidth !important;
 	}
-}
 
-if yt-hideScrollbars {
-	* {
-		scrollbar-width: none !important;
+	if yt-hideScrollbars {
+		* {
+			scrollbar-width: none !important;
+		}
 	}
 }
 
@@ -348,7 +347,7 @@ url-prefix("https://www.youtube.com/live") {
 			width: fit-content;
 			min-width: unset;
 		}
-		
+
 		ytd-subscribe-button-renderer {
 			width: fit-content !important; /* Must be !important */
 		}
