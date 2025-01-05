@@ -1,8 +1,12 @@
 <h1 align="center"> <img width="32px" src="avatar/anchor.webp" /> Holodex & YouTube Tweaks <img width="32px" src="avatar/anchor.webp" /> </h1>
 
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Himither/Holodex-Youtube-Tweaks/master/holodex.user.css)
+
 ## Table of Contents
- 1. [Description](#description)
- 2. [Preview](#preview)
+ 1. [Features](#features)
+	* [Holodex](#holodex-features)
+ 	* [YouTube](#youtube-features)
+ 3. [Preview](#preview)
 	* [Holodex](#holodex-preview)
  	* [YouTube](#youtube-preview)
  4. [Details](#details)
@@ -10,11 +14,25 @@
 	* [Hyperchat](#hyperchat)
 	* [Custom Avatar](#custom-avatar)
 
-## Description
+## Features
 
-Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons and many more tweaks.
+### Holodex Features
 
-[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Himither/Holodex-Youtube-Tweaks/master/holodex.user.css)
+* Better dark mode and true black mode (+ option to hide borders)
+* Improved Singleview & Multiview Viewing Experience
+* Adjustable chat and menu width
+* Extended color theme (currently only Aqua)
+* Custom Avatar
+* Hide Scrollbars
+
+### YouTube Features
+
+* Better dark mode (+ option to hide chat/playlist borders)
+* Adjustable menu width
+* Full height playlist & livechat
+* Show header only on hover
+* Full width mode
+* Textless buttons (below video: Save, Like, etc...)
 
 ## Preview
 
