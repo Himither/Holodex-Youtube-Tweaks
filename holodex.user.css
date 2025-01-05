@@ -55,10 +55,13 @@
 @var number			yt-menuWidth						"Change side menu width (170px - 1080px)" [240, 170, 1080, 1, "px"]
 @var checkbox			yt-darknesss						"La+ Darknesss" 0
 @var checkbox			yt-borderlessChat					"Remove border around chat" 0
+@var checkbox			yt-borderlessPlaylist					"Remove border around playlist" 0
+@var checkbox			yt-hideShorts						"Hide shorts reel in right sidebar" 0
 @var checkbox			yt-hoverHeader						"Show header only on hover" 0
 @var checkbox			yt-buttons						"Remove text from buttons below video" 0
+@var checkbox			yt-playlistChatFullHeight				"Use full height for playlist or chat" 0
 @var checkbox			yt-useWidth						"Use full width when watching videos (progess bar is a bit iffy)" 0
-@var checkbox			yt-hoverSecondary					"Works only with full width option. When chat AND playlist are closed hide right column when not hovered." 0
+@var checkbox			yt-hoverSecondary					"For use with full width option above. When live-chat isn't open hide right sidebar when not hovered." 0
 
 @var text YouTubeChat		"━━━━━━⮞【YT Chat】" '_'
 
@@ -330,6 +333,18 @@ url-prefix("https://www.youtube.com/live") {
 		}
 	}
 
+	if yt-borderlessPlaylist {
+		#container.ytd-playlist-panel-renderer {
+			border: 1px solid transparent;
+		}
+	}
+
+	if yt-hideShorts {
+		ytd-reel-shelf-renderer {
+			display: none;
+		}
+	}
+
 	if yt-hoverHeader {
 
 		#content #masthead-container {
@@ -362,6 +377,39 @@ url-prefix("https://www.youtube.com/live") {
 		}
 	}
 
+	if yt-playlistChatFullHeight {
+
+
+		#secondary:has(#playlist[hidden]) #chat-container:has(#chat):not(:has(#chat[collapsed])) {
+			height: calc(100dvh - var(--ytd-toolbar-height)) !important;
+		}
+
+		#secondary:has(#playlist[collapsed]) #chat-container:has(#chat):not(:has(#chat[collapsed])) {
+			height: calc(100dvh - var(--ytd-toolbar-height) - var(--ytd-margin-6x) - 68px) !important;
+			margin-bottom: var(--ytd-margin-6x);
+		}
+
+		#secondary #chat:not([collapsed]) {
+			height: 100dvh !important;
+			min-height: 0 !important;
+			margin-bottom: 0 !important;
+		}
+
+		#secondary #playlist:not([collapsed]) {
+			height: calc(100dvh - var(--ytd-toolbar-height)) !important;
+			max-height: unset !important;
+			margin-bottom: 0 !important;
+		}
+
+		#secondary #playlist:not([collapsed]) #container {
+			max-height: calc(100% - var(--ytd-toolbar-height)) !important;
+		}
+
+		#secondary #chat-container:not(:has(#chat[collapsed])) #chat {
+			height: calc(100% - var(--ytd-toolbar-height)) !important;
+		}
+	}
+
 	if yt-useWidth {
 
 		#page-manager.ytd-app {
@@ -381,11 +429,20 @@ url-prefix("https://www.youtube.com/live") {
 			padding-top: var(--ytd-toolbar-height) !important;
 		}
 
-		#player {
+		#primary #player {
 			display: inline-flex !important;
 			height: 100dvh !important;
 			width: 100% !important;
 			align-items: center !important;
+		}
+
+		#primary #below {
+			margin-top: calc(-28px + -55px + -16px);
+			opacity: 0;
+		}
+
+		#primary #below:hover {
+			opacity: 1;
 		}
 
 		#player-container-outer {
@@ -414,25 +471,6 @@ url-prefix("https://www.youtube.com/live") {
 			z-index: 10 !important;
 		}
 
-		#secondary:has(#playlist[hidden]) #chat-container:has(#chat):not(:has(#chat[collapsed])) {
-			height: calc(100dvh - var(--ytd-toolbar-height)) !important;
-		}
-
-		#secondary:has(#playlist[collapsed]) #chat-container:has(#chat):not(:has(#chat[collapsed])) {
-			height: calc(100dvh - var(--ytd-toolbar-height) - var(--ytd-margin-6x) - 68px) !important;
-			margin-bottom: var(--ytd-margin-6x);
-		}
-
-		#chat:not([collapsed]) {
-			height: 100% !important;
-			min-height: 0 !important;
-			margin-bottom: 0 !important;
-		}
-
-		#secondary #chat-container:not(:has(#chat[collapsed])) #chat {
-			height: calc(100% - var(--ytd-toolbar-height)) !important
-		}
-
 		.ytp-tooltip:not([aria-hidden="true"]) {
 			top: calc(100% - 96px) !important;
 		}
@@ -446,13 +484,13 @@ url-prefix("https://www.youtube.com/live") {
 		}
 	}
 
-	if yt-hoverSecondary and yt-useWidth {
+	if yt-useWidth and yt-hoverSecondary {
 
 		#columns {
 			overflow-x: hidden !important;
 		}
 
-		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed], [hidden])) #primary,
+		#columns:has(#chat[collapsed]) #primary,
 		#columns:not(:has(#chat)) #primary {
 			max-width: 90dvw !important;
 			padding-right: 0 !important;
@@ -460,31 +498,31 @@ url-prefix("https://www.youtube.com/live") {
 			padding-left: var(--ytd-margin-6x) !important;
 		}
 
-		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed], [hidden])) #player-container-outer,
+		#columns:has(#chat[collapsed]) #player-container-outer,
 		#columns:not(:has(#chat)) #player-container-outer {
 			max-width: 100% !important;
 		}
 
-		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed], [hidden])) #secondary,
+		#columns:has(#chat[collapsed]) #secondary,
 		#columns:not(:has(#chat)) #secondary {
 			opacity: 0 !important;
 			width: 0 !important;
 			min-width: 0 !important;
 		}
 
-		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed], [hidden])):has(#secondary:hover),
+		#columns:has(#chat[collapsed]):has(#secondary:hover),
 		#columns:not(:has(#chat)):has(#secondary:hover) {
 			justify-content: flex-end !important;
 		}
 
-		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed], [hidden])):has(#secondary:hover) #primary,
+		#columns:has(#chat[collapsed]):has(#secondary:hover) #primary,
 		#columns:not(:has(#chat)):has(#secondary:hover) #primary {
 			min-width: var(--ytd-watch-flexy-min-player-width) !important;
 			margin-right: 0 !important;
 			margin-left: var(--ytd-margin-6x) !important;
 		}
 
-		#columns:has(#chat[collapsed]):has(#playlist:is([collapsed], [hidden])) #secondary:hover,
+		#columns:has(#chat[collapsed]) #secondary:hover,
 		#columns:not(:has(#chat)):not(:has(#primary:hover)) #secondary:hover {
 			opacity: 1 !important;
 			width: var(--ytd-watch-flexy-sidebar-width) !important;
