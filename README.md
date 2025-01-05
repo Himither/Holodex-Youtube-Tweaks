@@ -3,8 +3,10 @@
 ## Table of Contents
  1. [Description](#description)
  2. [Preview](#preview)
- 3. [Details](#details)
-	* [Holodex](#holodex)
+	* [Holodex](#holodex1)
+ 	* [YouTube](#youtube)
+ 4. [Details](#details)
+	* [Holodex](#holodex2)
 	* [Hyperchat](#hyperchat)
 	* [Custom Avatar](#custom-avatar)
 
@@ -16,7 +18,9 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 
 ## Preview
 
-### Singleview
+### Holodex
+
+#### Singleview
 
 <p align="center">
   <img alt="Singleview - Darker" src="preview/singleviewDarker.webp" width="45%">
@@ -24,7 +28,7 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
   <img alt="Singleview - La+ Darknesss" src="preview/singleviewDarknesss.webp" width="45%">
 </p>
 
-### Channeru
+#### Channeru
 
 <p align="center">
   <img alt="Channeru - Darker" src="preview/channeruDarker.webp" width="45%">
@@ -32,7 +36,7 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
   <img alt="Channeru - La+ Darknesss" src="preview/channeruDarknesss.webp" width="45%">
 </p>
 
-### Settai
+#### Settai
 
 <p align="center">
   <img alt="Settai - Darker" src="preview/settaiDarker.webp" width="45%">
@@ -40,13 +44,15 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
   <img alt="Settai - La+ Darknesss" src="preview/settaiDarknesss.webp" width="45%">
 </p>
 
+### YouTube
+
 ## Details
 
 ### [Holodex](https://holodex.net/)
 
 **Turn on Holodex own dark mode** for the the two extended dark modes to display properly.
 
-Unless you're using fullscreen mode anyway I would recommend Firefox over Chrome, because there's no ugly border on the top. Of course you need to install a nice pure black theme to make it fit.
+You can either use the browser fullscreen mode or use a **GOOD** black theme, without any borders, to get the ultimate dark mode experience.
 
 ### [Hyperchat](https://livetl.app/hyperchat)
 
