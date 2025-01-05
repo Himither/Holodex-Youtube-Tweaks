@@ -4,6 +4,9 @@
  1. [Description](#description)
  2. [Preview](#preview)
  3. [Details](#details)
+	* [Holodex](#holodex)
+	* [Hyperchat](#hyperchat)
+ * [Custom Avatar](#custom-avatar)
 
 ## Description
 
@@ -39,9 +42,6 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 
 ## Details
 
-> [!WARNING]
-> Rarely, **when Hyperchat has an update waiting for you to accept**, the styling will temporarily not affect it until you **confirm the update**.
-
 ### [Holodex](https://holodex.net/)
 
 **Turn on Holodex own dark mode** for the the two extended dark modes to display properly.
@@ -49,6 +49,9 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 Unless you're using fullscreen mode anyway I would recommend Firefox over Chrome, because there's no ugly border on the top. Of course you need to install a nice pure black theme to make it fit.
 
 ### [Hyperchat](https://livetl.app/hyperchat)
+
+> [!WARNING]
+> Rarely, **when Hyperchat has an update waiting for you to accept**, the styling will temporarily not affect it until you **confirm the update**.
 
 > [!TIP]
 > If you want to **always see Live Chat** activate the hyperchat setting:
