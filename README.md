@@ -19,7 +19,7 @@
 ### Holodex Features
 
 * Better dark mode and true black mode (+ option to hide borders)
-* Improved Singleview & Multiview Viewing Experience
+* Improved Singleview & Multiview viewing experience
 * Adjustable chat and menu width
 * Extended color theme (currently only Aqua)
 * Custom Avatar
@@ -33,6 +33,7 @@
 * Show header only on hover
 * Full width mode
 * Textless buttons (below video: Save, Like, etc...)
+* Hide Scrollbars
 
 ## Preview
 
