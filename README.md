@@ -1,5 +1,10 @@
 <h1 align="center"> <img width="32px" src="avatar/anchor.webp" /> Holodex & YouTube Tweaks <img width="32px" src="avatar/anchor.webp" /> </h1>
 
+## Table of Contents
+ 1. [Description](#description)
+ 2. [Preview](#preview)
+ 3. [Details](#details)
+
 ## Description
 
 Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons and many more tweaks.
