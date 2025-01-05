@@ -3,10 +3,10 @@
 ## Table of Contents
  1. [Description](#description)
  2. [Preview](#preview)
-	* [Holodex](#holodex1)
- 	* [YouTube](#youtube)
+	* [Holodex](#holodex-preview)
+ 	* [YouTube](#youtube-preview)
  4. [Details](#details)
-	* [Holodex](#holodex2)
+	* [Holodex](#holodex)
 	* [Hyperchat](#hyperchat)
 	* [Custom Avatar](#custom-avatar)
 
@@ -18,7 +18,7 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
 
 ## Preview
 
-### Holodex
+### Holodex Preview
 
 #### Singleview
 
@@ -44,7 +44,7 @@ Improved dark mode, adjustable chat and menu width, hiding scrollbars/buttons an
   <img alt="Settai - La+ Darknesss" src="preview/settaiDarknesss.webp" width="45%">
 </p>
 
-### YouTube
+### YouTube Preview
 
 ## Details
 
