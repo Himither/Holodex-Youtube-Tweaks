@@ -6,7 +6,7 @@
  3. [Details](#details)
 	* [Holodex](#holodex)
 	* [Hyperchat](#hyperchat)
- * [Custom Avatar](#custom-avatar)
+	* [Custom Avatar](#custom-avatar)
 
 ## Description
 
