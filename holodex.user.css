@@ -54,14 +54,24 @@
 
 @var number			yt-menuWidth						"Change side menu width (170px - 1080px)" [240, 170, 1080, 1, "px"]
 @var checkbox			yt-darknesss						"La+ Darknesss" 0
+@var checkbox			yt-hoverHeader						"Show header only on hover when watching videos or shorts" 0
+@var checkbox			yt-hideMinimenu						"Hide the small left sidemenu in Home & Shorts" 0
+@var checkbox			yt-buttons						"Remove text from buttons below video" 0
+@var checkbox			yt-absoluteHeader					"Stop the header from scrolling along with the page in Home" 0
+@var checkbox			yt-posts						"Show YouTube posts on top in Home" 0
+
+@var text YouTubeWatch		"━━━━━━⮞【YT Watch】" '_'
+
 @var checkbox			yt-borderlessChat					"Remove border around chat" 0
 @var checkbox			yt-borderlessPlaylist					"Remove border around playlist" 0
-@var checkbox			yt-hideShorts						"Hide shorts reel in right sidebar" 0
-@var checkbox			yt-hoverHeader						"Show header only on hover" 0
-@var checkbox			yt-buttons						"Remove text from buttons below video" 0
 @var checkbox			yt-playlistChatFullHeight				"Use full height for playlist or chat" 0
 @var checkbox			yt-useWidth						"Use full width when watching videos (progess bar is a bit iffy)" 0
 @var checkbox			yt-hoverSecondary					"For use with full width option above. When live-chat isn't open hide right sidebar when not hovered." 0
+
+@var text YouTubeShorts	"━━━━━━⮞【YT Shorts】" '_'
+
+@var checkbox			yt-hideShortsSidebar					"Hide shorts in right sidebar" 0
+@var checkbox			yt-hideShortsHome					"Hide shorts in Home" 0
 
 @var text YouTubeChat		"━━━━━━⮞【YT Chat】" '_'
 
@@ -305,9 +315,87 @@
 
 @-moz-document url-prefix("https://www.youtube.com/") {
 
+	#contentContainer.tp-yt-app-drawer {
+		/* fix the rigid sidemenu opening/closing animation */
+		transform: translate3d(-200%, 0, 0);
+		transition-timing-function: ease-in-out;
+		transition-duration: 300ms !important; /* must be important cause inline style overwrite */
+	}
+
+	#guide-content {
+		visibility: visible;
+	}
+	
+	ytd-app[guide-persistent-and-visible] ytd-page-manager.ytd-app {
+		margin-left: 0;
+	}
+
 	#guide-content,
 	#guide-renderer {
 		width: yt-menuWidth !important;
+	}
+
+	if yt-darknesss {
+		html[dark],
+		[dark] {
+			--yt-spec-base-background: black;
+		}
+		
+		ytd-app[is-shorts-page] {
+			background-color: var(--yt-spec-base-background);
+		}
+	}
+	
+	if yt-hoverHeader {
+
+		:is(ytd-app[mini-guide-visible][is-shorts-page], ytd-app:not(:is([mini-guide-visible], [guide-persistent-and-visible]))) #masthead-container {
+			opacity: 0 !important;
+			transition: opacity 300ms ease-in-out;
+		}
+
+		:is(ytd-app[mini-guide-visible][is-shorts-page], ytd-app:not(:is([mini-guide-visible], [guide-persistent-and-visible]))) #masthead-container:hover {
+			opacity: 1 !important;
+			background-color: var(--yt-spec-base-background) !important;
+		}
+	}
+
+	if yt-hideMinimenu {
+		ytd-mini-guide-renderer {
+			display: none;
+		}
+
+		ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
+			margin-left: 0;
+		}
+		
+		ytd-browse[mini-guide-visible] ytd-playlist-header-renderer.ytd-browse {
+			left: unset;
+		}
+	}
+	
+	if yt-hideShortsSidebar {
+		ytd-reel-shelf-renderer {
+			display: none;
+		}
+	}
+
+	if yt-hideShortsHome {
+		#content ytd-rich-shelf-renderer:has(#dismissible):not(:has(ytd-post-renderer)) {
+			display: none;
+		}
+	}
+
+	if yt-absoluteHeader {
+		#masthead-container.ytd-app,
+		#chips-wrapper.ytd-feed-filter-chip-bar-renderer {
+			position: absolute;
+		}
+	}
+
+	if yt-posts {
+		#content ytd-rich-section-renderer:has(ytd-post-renderer) {
+			order: -1;
+		}
 	}
 
 	if yt-hideScrollbars {
@@ -316,14 +404,12 @@
 		}
 	}
 }
-
 @-moz-document url-prefix("https://www.youtube.com/watch"),
 url-prefix("https://www.youtube.com/live") {
 
 	if yt-darknesss {
-		html[dark],
-		[dark] {
-			--yt-spec-base-background: black;
+		.header.ytd-playlist-panel-renderer {
+			background: var(--yt-spec-base-background);
 		}
 	}
 
@@ -336,24 +422,6 @@ url-prefix("https://www.youtube.com/live") {
 	if yt-borderlessPlaylist {
 		#container.ytd-playlist-panel-renderer {
 			border: 1px solid transparent;
-		}
-	}
-
-	if yt-hideShorts {
-		ytd-reel-shelf-renderer {
-			display: none;
-		}
-	}
-
-	if yt-hoverHeader {
-
-		#content #masthead-container {
-			opacity: 0 !important;
-		}
-
-		#content:not(:has(#chat-container:hover)) #masthead-container:hover {
-			opacity: 1 !important;
-			background-color: var(--yt-spec-base-background) !important;
 		}
 	}
 
@@ -425,6 +493,10 @@ url-prefix("https://www.youtube.com/live") {
 			padding-top: 0 !important;
 		}
 
+		#primary #below {
+			margin-top: calc(var(--ytd-margin-3x) * -1);
+		}
+
 		#secondary {
 			padding-top: var(--ytd-toolbar-height) !important;
 		}
@@ -434,15 +506,6 @@ url-prefix("https://www.youtube.com/live") {
 			height: 100dvh !important;
 			width: 100% !important;
 			align-items: center !important;
-		}
-
-		#primary #below {
-			margin-top: calc(-28px + -55px + -16px);
-			opacity: 0;
-		}
-
-		#primary #below:hover {
-			opacity: 1;
 		}
 
 		#player-container-outer {
