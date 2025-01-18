@@ -4,7 +4,7 @@
 @namespace			https://github.com/Himither
 @homepageURL			https://github.com/Himither/Holodex-Youtube-Tweaks
 @supportURL			https://github.com/Himither/Holodex-Youtube-Tweaks/issues
-@version			1.1.41
+@version			1.1.42
 @description			Improved dark mode, adjustable chat width, hiding scrollbars/buttons and many more tweaks.
 @author				Himither
 @license			MIT
@@ -56,7 +56,6 @@
 @var checkbox			yt-darknesss						"La+ Darknesss" 0
 @var checkbox			yt-hoverHeader						"Show header only on hover when watching videos or shorts" 0
 @var checkbox			yt-hideMinimenu						"Hide the small left sidemenu in Home & Shorts" 0
-@var checkbox			yt-buttons						"Remove text from buttons below video" 0
 @var checkbox			yt-absoluteHeader					"Stop the header from scrolling along with the page in Home" 0
 @var checkbox			yt-posts						"Show YouTube posts on top in Home" 0
 
@@ -65,6 +64,7 @@
 @var checkbox			yt-borderlessChat					"Remove border around chat" 0
 @var checkbox			yt-borderlessPlaylist					"Remove border around playlist" 0
 @var checkbox			yt-playlistChatFullHeight				"Use full height for playlist or chat" 0
+@var checkbox			yt-saveButtonTweaks					"Tweaks to ensure the saveButton isn't hidden in the menu" 0
 @var checkbox			yt-useWidth						"Use full width when watching videos (progess bar is a bit iffy)" 0
 @var checkbox			yt-hoverSecondary					"For use with full width option above. When live-chat isn't open hide right sidebar when not hovered." 0
 
@@ -325,7 +325,7 @@
 	#guide-content {
 		visibility: visible;
 	}
-	
+
 	ytd-app[guide-persistent-and-visible] ytd-page-manager.ytd-app {
 		margin-left: 0;
 	}
@@ -340,12 +340,12 @@
 		[dark] {
 			--yt-spec-base-background: black;
 		}
-		
+
 		ytd-app[is-shorts-page] {
 			background-color: var(--yt-spec-base-background);
 		}
 	}
-	
+
 	if yt-hoverHeader {
 
 		:is(ytd-app[mini-guide-visible][is-shorts-page], ytd-app:not(:is([mini-guide-visible], [guide-persistent-and-visible]))) #masthead-container {
@@ -367,12 +367,16 @@
 		ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
 			margin-left: 0;
 		}
-		
+
 		ytd-browse[mini-guide-visible] ytd-playlist-header-renderer.ytd-browse {
 			left: unset;
 		}
+
+		:is(ytd-browse[mini-guide-visible], ytd-browse[guide-persistent-and-visible]) .page-header-sidebar.ytd-browse {
+			left: unset;
+		}
 	}
-	
+
 	if yt-hideShortsSidebar {
 		ytd-reel-shelf-renderer {
 			display: none;
@@ -404,6 +408,7 @@
 		}
 	}
 }
+
 @-moz-document url-prefix("https://www.youtube.com/watch"),
 url-prefix("https://www.youtube.com/live") {
 
@@ -425,7 +430,15 @@ url-prefix("https://www.youtube.com/live") {
 		}
 	}
 
-	if yt-buttons {
+	if yt-saveButtonTweaks {
+
+		#upload-info.ytd-video-owner-renderer {
+			display: none;
+		}
+
+		ytd-video-owner-renderer:has(:is(.yt-simple-endpoint:hover, #upload-info:hover)) #upload-info.ytd-video-owner-renderer {
+			display: flex;
+		}
 
 		:is(#owner, #actions.ytd-watch-metadata) {
 			width: fit-content;
@@ -442,6 +455,14 @@ url-prefix("https://www.youtube.com/live") {
 
 		:is(yt-button-view-model, #flexible-item-buttons) .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon {
 			margin: 0;
+		}
+
+		#flexible-item-buttons {
+			display: flex;
+		}
+
+		#flexible-item-buttons > yt-button-view-model:has(button[title='Save']) {
+			order: -1;
 		}
 	}
 
