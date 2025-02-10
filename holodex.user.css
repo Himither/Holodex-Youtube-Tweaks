@@ -67,7 +67,7 @@
 @var checkbox				yt-playlistChatFullHeight			"Use full height for playlist or chat" 0
 @var checkbox				yt-saveButtonTweaks					"Tweaks to ensure the saveButton isn't hidden in the menu" 0
 @var checkbox				yt-useWidth							"Use full width when watching regular wide videos (progess bar is a bit iffy)" 0
-@var checkbox				yt-hoverSecondary					"For use with full width option above. If in portrait mode and live-chat isn't open hide right sidebar when not hovered." 0
+@var checkbox				yt-hoverSecondary					"For use with full width option above. If live-chat isn't open hide right sidebar when not hovered." 0
 
 @var text YouTubeShorts		"━━━━━━⮞【YT Shorts】" '_'
 	
