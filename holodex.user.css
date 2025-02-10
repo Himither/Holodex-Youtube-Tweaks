@@ -509,6 +509,7 @@ url-prefix("https://www.youtube.com/clip") {
 	if yt-useWidth {
 
 		#page-manager:not(:has(.ytp-rounded-miniplayer-not-regular-wide-video)) {
+			
 			#page-manager.ytd-app {
 				margin-top: 0;
 			}
@@ -580,51 +581,49 @@ url-prefix("https://www.youtube.com/clip") {
 
 	if yt-useWidth and yt-hoverSecondary {
 
-		@media (orientation: portrait) {
-			#columns {
-				overflow-x: hidden !important;
-			}
-
-			#columns:has(#chat[collapsed]) #primary,
-			#columns:not(:has(#chat)) #primary {
-				max-width: 90dvw !important;
-				padding-right: 0 !important;
-				margin: 0 auto !important;
-				padding-left: var(--ytd-margin-6x) !important;
-			}
-
-			#columns:has(#chat[collapsed]) #player-container-outer,
-			#columns:not(:has(#chat)) #player-container-outer {
-				max-width: 100% !important;
-			}
-
-			#columns:has(#chat[collapsed]) #secondary,
-			#columns:not(:has(#chat)) #secondary {
-				opacity: 0 !important;
-				width: 0 !important;
-				min-width: 0 !important;
-			}
-
-			#columns:has(#chat[collapsed]):has(#secondary:hover),
-			#columns:not(:has(#chat)):has(#secondary:hover) {
-				justify-content: flex-end !important;
-			}
-
-			#columns:has(#chat[collapsed]):has(#secondary:hover) #primary,
-			#columns:not(:has(#chat)):has(#secondary:hover) #primary {
-				min-width: var(--ytd-watch-flexy-min-player-width) !important;
-				margin-right: 0 !important;
-				margin-left: var(--ytd-margin-6x) !important;
-			}
-
-			#columns:has(#chat[collapsed]) #secondary:hover,
-			#columns:not(:has(#chat)):not(:has(#primary:hover)) #secondary:hover {
-				opacity: 1 !important;
-				width: var(--ytd-watch-flexy-sidebar-width) !important;
-				min-width: var(--ytd-watch-flexy-sidebar-min-width) !important;
-				padding-left: var(--ytd-margin-6x) !important;
-			}
+		#columns {
+			overflow-x: hidden !important;
 		}
+
+		#columns:has(#chat[collapsed]) #primary,
+		#columns:not(:has(#chat)) #primary {
+			max-width: 90dvw !important;
+			padding-right: 0 !important;
+			margin: 0 auto !important;
+			padding-left: var(--ytd-margin-6x) !important;
+		}
+
+		#columns:has(#chat[collapsed]) #player-container-outer,
+		#columns:not(:has(#chat)) #player-container-outer {
+			max-width: 100% !important;
+		}
+
+		#columns:has(#chat[collapsed]) #secondary,
+		#columns:not(:has(#chat)) #secondary {
+			opacity: 0 !important;
+			width: 0 !important;
+			min-width: 0 !important;
+		}
+
+		#columns:has(#chat[collapsed]):has(#secondary:hover),
+		#columns:not(:has(#chat)):has(#secondary:hover) {
+			justify-content: flex-end !important;
+		}
+
+		#columns:has(#chat[collapsed]):has(#secondary:hover) #primary,
+		#columns:not(:has(#chat)):has(#secondary:hover) #primary {
+			min-width: var(--ytd-watch-flexy-min-player-width) !important;
+			margin-right: 0 !important;
+			margin-left: var(--ytd-margin-6x) !important;
+		}
+
+		#columns:has(#chat[collapsed]) #secondary:hover,
+		#columns:not(:has(#chat)):not(:has(#primary:hover)) #secondary:hover {
+			opacity: 1 !important;
+			width: var(--ytd-watch-flexy-sidebar-width) !important;
+			min-width: var(--ytd-watch-flexy-sidebar-min-width) !important;
+			padding-left: var(--ytd-margin-6x) !important;
+			}
 	}
 }
 
