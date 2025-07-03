@@ -1,5 +1,11 @@
 <h1 align="center"> <img width="32px" src="avatar/anchor.webp" /> Holodex & YouTube Tweaks <img width="32px" src="avatar/anchor.webp" /> </h1>
 
+> [!IMPORTANT]
+> **For this installation link to work the stylus browser extension is necessary**
+> 
+> * **Chrome**: https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne
+> * **Firefox**: https://addons.mozilla.org/en-US/firefox/addon/styl-us/
+
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Himither/Holodex-Youtube-Tweaks/master/holodex.user.css)
 
 ## Table of Contents
